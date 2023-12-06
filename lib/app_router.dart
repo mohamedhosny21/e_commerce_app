@@ -63,7 +63,7 @@ class AppRouter {
                   pizzaModel: pizzaModel,
                 ));
       case '/cart_screen':
-        return MaterialPageRoute(builder: (context) => CartScreen());
+        return MaterialPageRoute(builder: (context) => const CartScreen());
     }
     return null;
   }
