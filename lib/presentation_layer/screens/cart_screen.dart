@@ -10,7 +10,7 @@ import '../../constants/colors.dart';
 import '../widgets/drawer_widget.dart';
 
 class CartScreen extends StatefulWidget {
-  CartScreen({super.key});
+  const CartScreen({super.key});
 
   @override
   State<CartScreen> createState() => _CartScreenState();
@@ -61,7 +61,7 @@ class _CartScreenState extends State<CartScreen> {
           }
         },
       ),
-      // bottomNavigationBar: const PaymentPersistantBottomSheet(),
+      bottomNavigationBar: const PaymentPersistantBottomSheet(),
     );
   }
 }

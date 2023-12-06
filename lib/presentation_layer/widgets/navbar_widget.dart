@@ -10,7 +10,7 @@ class NavBar extends StatelessWidget {
   const NavBar({super.key});
 
   List<Widget> _buildScreens() {
-    return [HomeScreen(), FavouriteScreen(), CartScreen()];
+    return [HomeScreen(), FavouriteScreen(), const CartScreen()];
   }
 
   List<PersistentBottomNavBarItem> _navBarItems() {

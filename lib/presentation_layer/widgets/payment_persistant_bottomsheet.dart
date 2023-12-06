@@ -42,7 +42,6 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
               ),
               trailing: BlocBuilder<CartCubit, CartState>(
                 builder: (context, state) {
-                  print(cartCubit.cartPizzaItems.length);
                   return Text(
                     '${cartCubit.cartPizzaItems.length}',
                     style: const TextStyle(
@@ -81,9 +80,9 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
               ),
             ),
           ),
-          const Expanded(
+          Expanded(
             child: ListTile(
-              title: Text(
+              title: const Text(
                 'Delivery Fee :',
                 style: TextStyle(
                   color: MyColors.myNavyBlue,
@@ -91,13 +90,17 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
-              trailing: Text(
-                '\$ ${10}',
-                style: TextStyle(
-                  color: MyColors.myNavyBlue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
+              trailing: BlocBuilder<CartCubit, CartState>(
+                builder: (context, state) {
+                  return Text(
+                    '\$ ${cartCubit.deliveryFee}',
+                    style: const TextStyle(
+                      color: MyColors.myNavyBlue,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  );
+                },
               ),
             ),
           ),

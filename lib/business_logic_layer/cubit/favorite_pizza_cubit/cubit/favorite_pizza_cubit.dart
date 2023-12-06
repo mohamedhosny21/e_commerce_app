@@ -42,7 +42,7 @@ class FavoritePizzaCubit extends Cubit<FavoritePizzaState> {
   Future<void> insertIntoFavoriteDatabase(PizzaModel pizzaModel) async {
     database
         .rawInsert(
-            'INSERT INTO Favorites(ID, PizzaName, PizzaImage,Price,MenuDescription) VALUES(${pizzaModel.id}, "${pizzaModel.pizzaName}", "${pizzaModel.image}",${pizzaModel.price},"${pizzaModel.menuDescription}")')
+            'INSERT INTO Favorites(ID, PizzaName, PizzaImage,Price,MenuDescription) VALUES(${pizzaModel.id}, "${pizzaModel.pizzaName}", "${pizzaModel.image}",${pizzaModel.originalPrice},"${pizzaModel.menuDescription}")')
         .then((value) {
       debugPrint(
           '${pizzaModel.pizzaName} is inserted successfully to favorite database');
@@ -75,7 +75,7 @@ class FavoritePizzaCubit extends Cubit<FavoritePizzaState> {
             id: row['ID'] as int,
             pizzaName: row['PizzaName'] as String,
             image: row['PizzaImage'] as String,
-            price: row['Price'] as num,
+            originalPrice: row['Price'] as num,
             menuDescription: row['MenuDescription'] as String);
       }).toList();
     }).catchError((error) {

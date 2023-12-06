@@ -30,10 +30,10 @@ class PizzaWidget extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  pizzaModel.image!.isNotEmpty
+                  pizzaModel.image.isNotEmpty
                       ? FadeInImage.assetNetwork(
                           placeholder: loadingGif,
-                          image: '${pizzaModel.image}',
+                          image: pizzaModel.image,
                           width: 120,
                           height: 120,
                           fit: BoxFit.fill,
@@ -71,7 +71,7 @@ class PizzaWidget extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        '\$ ${pizzaModel.price?.toStringAsFixed(2)}',
+                        '\$ ${pizzaModel.originalPrice.toStringAsFixed(2)}',
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(

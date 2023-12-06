@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                       color: MyColors.myNavyBlue),
                 ),
                 const Text(
-                  'Our daily fresh pizzas',
+                  'Our daily fresh pizza',
                   style: TextStyle(fontSize: 20.0, color: Colors.grey),
                 ),
                 const SizedBox(

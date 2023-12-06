@@ -8,13 +8,9 @@ import '../../constants/colors.dart';
 
 class LowerButton extends StatelessWidget {
   final PizzaModel pizzaModel;
-  final int pizzaQuantity;
-  final num price;
   const LowerButton({
     super.key,
     required this.pizzaModel,
-    required this.pizzaQuantity,
-    required this.price,
   });
 
   @override
@@ -29,6 +25,7 @@ class LowerButton extends StatelessWidget {
               final isAddedToCart = cartCubit.cartPizzaItems
                   .where((element) => element.pizzaSize == pizzaModel.pizzaSize)
                   .any((element) => pizzaModel.id == element.id);
+
               return MaterialButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
@@ -37,8 +34,8 @@ class LowerButton extends StatelessWidget {
                     BlocProvider.of<CartCubit>(context)
                         .deleteFromCartDatabase(pizzaModel);
                   } else {
-                    BlocProvider.of<CartCubit>(context).insertIntoCartDatabase(
-                        pizzaModel, pizzaQuantity, price);
+                    BlocProvider.of<CartCubit>(context)
+                        .insertIntoCartDatabase(pizzaModel);
                   }
                 },
                 color: MyColors.myNavyBlue,

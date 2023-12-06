@@ -96,8 +96,6 @@ class BuildAllPizzaSizeContainers extends StatelessWidget {
                   pizzaSizeIndex = 1;
                   pizzaSize = 'Small';
                   getPizzaSize(pizzaSizeIndex, pizzaSize);
-                  pizzaOrderCubit.updatePizzaPrice(
-                      pizzaSizeIndex, pizzaModel, context);
                 }
               },
             )),
@@ -113,9 +111,6 @@ class BuildAllPizzaSizeContainers extends StatelessWidget {
                   pizzaSizeIndex = 2;
                   pizzaSize = 'Medium';
                   getPizzaSize(pizzaSizeIndex, pizzaSize);
-
-                  pizzaOrderCubit.updatePizzaPrice(
-                      pizzaSizeIndex, pizzaModel, context);
                 }
               },
             )),
@@ -131,9 +126,6 @@ class BuildAllPizzaSizeContainers extends StatelessWidget {
                   pizzaSizeIndex = 3;
                   pizzaSize = 'Large';
                   getPizzaSize(pizzaSizeIndex, pizzaSize);
-
-                  pizzaOrderCubit.updatePizzaPrice(
-                      pizzaSizeIndex, pizzaModel, context);
                 }
               },
             )),

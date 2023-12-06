@@ -17,13 +17,4 @@ class MediumPizzaSizeState extends PizzaOrderState {}
 
 class LargePizzaSizeState extends PizzaOrderState {}
 
-class CartItemsLoadingState extends PizzaOrderState {}
-
-class CartItemsLoadedState extends PizzaOrderState {
-  final List<PizzaModel> cartItems;
-  final int index;
-  CartItemsLoadedState({
-    required this.cartItems,
-    required this.index,
-  });
-}
+class PizzaQuantityChanged extends PizzaOrderState {}

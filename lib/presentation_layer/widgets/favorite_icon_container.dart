@@ -39,7 +39,7 @@ class FavoriteIcon extends StatelessWidget {
               onPressed: () {
                 if (isFavorite) {
                   favoritePizzaCubit.deleteFromFavoriteDatabase(
-                      pizzaModel.id!, pizzaModel);
+                      pizzaModel.id, pizzaModel);
                 } else {
                   favoritePizzaCubit.insertIntoFavoriteDatabase(pizzaModel);
                 }

@@ -7,8 +7,6 @@ part 'pizza_order_state.dart';
 
 class PizzaOrderCubit extends Cubit<PizzaOrderState> {
   PizzaOrderCubit() : super(PizzaOrderInitial());
-  late int pizzaSizeIndex;
-  num currentPrice = 0;
   late int pizzaQuantity;
   num originalPrice = 0;
 
@@ -17,25 +15,38 @@ class PizzaOrderCubit extends Cubit<PizzaOrderState> {
       PizzaModel pizzaModel, int pizzaQuantity, BuildContext context) {
     final List<PizzaModel> cartItems =
         BlocProvider.of<CartCubit>(context).cartPizzaItems;
-    final int index =
-        cartItems.indexWhere((element) => element.id == pizzaModel.id);
+    final int index = cartItems.indexWhere((element) =>
+        element.id == pizzaModel.id &&
+        element.pizzaSizeIndex == pizzaModel.pizzaSizeIndex);
 
     if (index != -1) {
-      cartItems[index].pizzaQuantity = pizzaQuantity;
-      // pizzaModel.pizzaQuantity = pizzaQuantity;
+      if (pizzaModel.pizzaSizeIndex == 1) {
+        cartItems[index].pizzaQuantity?.smallPizzaQuantity = pizzaQuantity;
+      } else if (pizzaModel.pizzaSizeIndex == 2) {
+        cartItems[index].pizzaQuantity?.mediumPizzaQuantity = pizzaQuantity;
+      } else if (pizzaModel.pizzaSizeIndex == 3) {
+        cartItems[index].pizzaQuantity?.largePizzaQuantity = pizzaQuantity;
+      }
     } else {
-      pizzaModel.pizzaQuantity = pizzaQuantity;
+      if (pizzaModel.pizzaSizeIndex == 1) {
+        pizzaModel.pizzaQuantity?.smallPizzaQuantity = pizzaQuantity;
+      } else if (pizzaModel.pizzaSizeIndex == 2) {
+        pizzaModel.pizzaQuantity?.mediumPizzaQuantity = pizzaQuantity;
+      } else if (pizzaModel.pizzaSizeIndex == 3) {
+        pizzaModel.pizzaQuantity?.largePizzaQuantity = pizzaQuantity;
+      }
     }
-    updatePizzaPrice(pizzaSizeIndex, pizzaModel, context);
+
+    updatePizzaPrice(pizzaModel, context);
+    BlocProvider.of<CartCubit>(context).updateToCartDatabase(pizzaModel);
+
+    emit(PizzaQuantityChanged());
   }
 
   void incrementPizzaOrder(
       BuildContext context, int pizzaQuantity, PizzaModel pizzaModel) {
     pizzaQuantity++;
-    this.pizzaQuantity = pizzaQuantity;
     changePizzaQuantity(pizzaModel, pizzaQuantity, context);
-    BlocProvider.of<CartCubit>(context)
-        .updateToCartDatabase(pizzaModel, currentPrice);
 
     emit(OnIncrementPizzaOrder());
   }
@@ -44,45 +55,109 @@ class PizzaOrderCubit extends Cubit<PizzaOrderState> {
       BuildContext context, int pizzaQuantity, PizzaModel pizzaModel) {
     if (pizzaQuantity > 1) {
       pizzaQuantity--;
-      this.pizzaQuantity = pizzaQuantity;
 
       changePizzaQuantity(pizzaModel, pizzaQuantity, context);
-      BlocProvider.of<CartCubit>(context)
-          .updateToCartDatabase(pizzaModel, currentPrice);
     }
     emit(OnDecrementPizzaOrder());
   }
 
-  void updatePizzaPrice(
-      int pizzaSizeIndex, PizzaModel pizzaModel, BuildContext context) {
+//get quantity from cart or from pizza model according to the passed model through constructor or parameter
+  int getPizzaQuantity(
+    PizzaModel pizzaModel,
+    int pizzaSizeIndex,
+  ) {
+    switch (pizzaSizeIndex) {
+      case 1:
+        return pizzaModel.pizzaQuantity!.smallPizzaQuantity;
+      case 2:
+        return pizzaModel.pizzaQuantity!.mediumPizzaQuantity;
+      case 3:
+        return pizzaModel.pizzaQuantity!.largePizzaQuantity;
+      default:
+        return 0;
+    }
+  }
+
+  num getPizzaSizeFactor(int pizzaSizeIndex) {
+    return pizzaSizeIndex == 1 ? 0.5 : (pizzaSizeIndex == 2 ? 1 : 2);
+  }
+
+  int showPizzaQuantity(PizzaModel pizzaModel, BuildContext context) {
     final List<PizzaModel> cartItems =
         BlocProvider.of<CartCubit>(context).cartPizzaItems;
-    final int index =
-        cartItems.indexWhere((element) => element.id == pizzaModel.id);
+    final int index = cartItems.indexWhere((element) =>
+        element.id == pizzaModel.id &&
+        element.pizzaSizeIndex == pizzaModel.pizzaSizeIndex);
     if (index != -1) {
-      pizzaQuantity = cartItems[index].pizzaQuantity!;
-      pizzaModel.pizzaQuantity = cartItems[index].pizzaQuantity;
-
-      //because i can't access orginal price in cart items so i save it in sql and get it
-
-      originalPrice = cartItems[index].originalPrice!;
+      return getPizzaQuantity(cartItems[index], pizzaModel.pizzaSizeIndex!);
     } else {
-      pizzaQuantity = pizzaModel.pizzaQuantity!;
-      originalPrice = pizzaModel.price!;
+      return getPizzaQuantity(pizzaModel, pizzaModel.pizzaSizeIndex!);
     }
+  }
 
-    this.pizzaSizeIndex = pizzaSizeIndex;
-    if (pizzaSizeIndex == 1) {
-      currentPrice = (originalPrice / 2) * pizzaQuantity;
-      emit(SmallPizzaSizeState());
-    } else if (pizzaSizeIndex == 2) {
-      currentPrice = originalPrice * pizzaQuantity;
-      emit(MediumPizzaSizeState());
-    } else if (pizzaSizeIndex == 3) {
-      currentPrice = originalPrice * 2 * pizzaQuantity;
-      emit(LargePizzaSizeState());
+  num getoriginalPrice(PizzaModel pizzaModel) {
+    return pizzaModel.originalPrice *
+        getPizzaSizeFactor(pizzaModel.pizzaSizeIndex!);
+  }
+
+  void updatePizzaPrice(PizzaModel pizzaModel, BuildContext context) {
+    final List<PizzaModel> cartItems =
+        BlocProvider.of<CartCubit>(context).cartPizzaItems;
+    final int index = cartItems.indexWhere((element) =>
+        element.id == pizzaModel.id &&
+        element.pizzaSizeIndex == pizzaModel.pizzaSizeIndex);
+    if (index != -1) {
+      pizzaQuantity =
+          getPizzaQuantity(cartItems[index], pizzaModel.pizzaSizeIndex!);
+      pizzaModel.pizzaQuantity?.smallPizzaQuantity =
+          cartItems[index].pizzaQuantity!.smallPizzaQuantity;
+
+      pizzaModel.pizzaQuantity?.mediumPizzaQuantity =
+          cartItems[index].pizzaQuantity!.mediumPizzaQuantity;
+
+      pizzaModel.pizzaQuantity?.largePizzaQuantity =
+          cartItems[index].pizzaQuantity!.largePizzaQuantity;
+
+      originalPrice = getoriginalPrice(cartItems[index]);
+
+      updatePizzaPriceBasedOnSize(
+          pizzaModel, pizzaModel.pizzaSizeIndex!, pizzaQuantity, originalPrice);
+    } else {
+      pizzaQuantity = getPizzaQuantity(pizzaModel, pizzaModel.pizzaSizeIndex!);
+
+      originalPrice = getoriginalPrice(pizzaModel);
+      updatePizzaPriceBasedOnSize(
+          pizzaModel, pizzaModel.pizzaSizeIndex!, pizzaQuantity, originalPrice);
     }
 
     emit(OnPizzaPriceUpdated());
+  }
+
+  void updatePizzaPriceBasedOnSize(PizzaModel pizzaModel, int pizzaSizeIndex,
+      int pizzaQuantity, num originalPrice) {
+    switch (pizzaSizeIndex) {
+      case 1:
+        pizzaModel.price?.smallPizzaPrice = pizzaQuantity * originalPrice;
+
+      case 2:
+        pizzaModel.price?.mediumPizzaPrice = pizzaQuantity * originalPrice;
+      case 3:
+        pizzaModel.price?.largePizzaPrice = pizzaQuantity * originalPrice;
+    }
+  }
+
+  num showPizzaPrice(PizzaModel pizzaModel, BuildContext context) {
+    updatePizzaPrice(pizzaModel, context);
+
+    switch (pizzaModel.pizzaSizeIndex) {
+      case 1:
+        return pizzaModel.price!.smallPizzaPrice;
+      case 2:
+        return pizzaModel.price!.mediumPizzaPrice;
+      case 3:
+        return pizzaModel.price!.largePizzaPrice;
+      default:
+        return 0;
+    }
   }
 }

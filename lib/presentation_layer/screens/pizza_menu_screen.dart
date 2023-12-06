@@ -116,8 +116,8 @@ class _PizzaMenuScreenState extends State<PizzaMenuScreen> {
   void getSearchedPizzaItems(String searchedWord) {
     searchedPizza = allPizza
         .where((pizza) =>
-            pizza.pizzaName!.toLowerCase().startsWith(searchedWord) ||
-            pizza.pizzaName!.startsWith(searchedWord))
+            pizza.pizzaName.toLowerCase().startsWith(searchedWord) ||
+            pizza.pizzaName.startsWith(searchedWord))
         .toList();
   }
 }

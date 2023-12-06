@@ -23,7 +23,6 @@ class PizzaOrderScreen extends StatefulWidget {
 
 class _PizzaOrderScreenState extends State<PizzaOrderScreen> {
   late PizzaOrderCubit pizzaOrderCubit;
-  num _currentPrice = 0;
   late int index;
   late List<PizzaModel> cartItems;
   @override
@@ -49,7 +48,7 @@ class _PizzaOrderScreenState extends State<PizzaOrderScreen> {
                         placeholder: loadingGif,
                         fit: BoxFit.fill,
                         width: 300,
-                        image: '${widget.pizzaModel.image}',
+                        image: widget.pizzaModel.image,
                       ),
                     ),
                     Expanded(
@@ -67,7 +66,7 @@ class _PizzaOrderScreenState extends State<PizzaOrderScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                '${widget.pizzaModel.pizzaName}',
+                                widget.pizzaModel.pizzaName,
                                 style: const TextStyle(
                                     color: MyColors.myNavyBlue,
                                     fontSize: 25,
@@ -112,7 +111,8 @@ class _PizzaOrderScreenState extends State<PizzaOrderScreen> {
                                       onPressed: () {
                                         pizzaOrderCubit.decrementPizzaOrder(
                                             context,
-                                            widget.pizzaModel.pizzaQuantity!,
+                                            pizzaOrderCubit.showPizzaQuantity(
+                                                widget.pizzaModel, context),
                                             widget.pizzaModel);
                                       },
                                       icon: Icons.remove),
@@ -126,7 +126,7 @@ class _PizzaOrderScreenState extends State<PizzaOrderScreen> {
                                         PizzaOrderState>(
                                       builder: (context, state) {
                                         return Text(
-                                          '${widget.pizzaModel.pizzaQuantity}',
+                                          '${pizzaOrderCubit.showPizzaQuantity(widget.pizzaModel, context)}',
                                           style: const TextStyle(fontSize: 20),
                                         );
                                       },
@@ -140,7 +140,8 @@ class _PizzaOrderScreenState extends State<PizzaOrderScreen> {
                                       onPressed: () {
                                         pizzaOrderCubit.incrementPizzaOrder(
                                             context,
-                                            widget.pizzaModel.pizzaQuantity!,
+                                            pizzaOrderCubit.showPizzaQuantity(
+                                                widget.pizzaModel, context),
                                             widget.pizzaModel);
                                       },
                                       icon: Icons.add),
@@ -152,15 +153,8 @@ class _PizzaOrderScreenState extends State<PizzaOrderScreen> {
                                         child: BlocBuilder<PizzaOrderCubit,
                                             PizzaOrderState>(
                                           builder: (context, state) {
-                                            pizzaOrderCubit.updatePizzaPrice(
-                                                widget
-                                                    .pizzaModel.pizzaSizeIndex!,
-                                                widget.pizzaModel,
-                                                context);
-                                            _currentPrice =
-                                                pizzaOrderCubit.currentPrice;
                                             return Text(
-                                              '\$ ${_currentPrice.toStringAsFixed(2)}',
+                                              '\$ ${pizzaOrderCubit.showPizzaPrice(widget.pizzaModel, context).toStringAsFixed(2)}',
                                               style: const TextStyle(
                                                   fontSize: 25,
                                                   fontWeight: FontWeight.bold),
@@ -188,18 +182,23 @@ class _PizzaOrderScreenState extends State<PizzaOrderScreen> {
           ],
         ),
         bottomNavigationBar: LowerButton(
-          pizzaQuantity: widget.pizzaModel.pizzaQuantity!,
           pizzaModel: widget.pizzaModel,
-          price: _currentPrice,
         ));
   }
 
   // Asynchronous initialization method
   Future<void> initAsync() async {
-    widget.pizzaModel.pizzaQuantity ??= 1;
+    pizzaOrderCubit = BlocProvider.of<PizzaOrderCubit>(context);
+
     widget.pizzaModel.pizzaSize ??= 'Medium';
     widget.pizzaModel.pizzaSizeIndex ??= 2;
-    pizzaOrderCubit = BlocProvider.of<PizzaOrderCubit>(context);
+
+    widget.pizzaModel.pizzaQuantity = PizzaQuantity(
+        smallPizzaQuantity: 1, mediumPizzaQuantity: 1, largePizzaQuantity: 1);
+    widget.pizzaModel.price = PizzaPrice(
+        smallPizzaPrice: widget.pizzaModel.originalPrice / 2,
+        mediumPizzaPrice: widget.pizzaModel.originalPrice,
+        largePizzaPrice: widget.pizzaModel.originalPrice * 2);
 
     // Wait for the asynchronous data loading
     await getCartItems();

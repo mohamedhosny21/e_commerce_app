@@ -30,3 +30,5 @@ class DeleteDatabaseState extends CartState {}
 class InsertDatabaseState extends CartState {}
 
 class UpdateToDatabaseState extends CartState {}
+
+class PaymentPriceChanged extends CartState {}

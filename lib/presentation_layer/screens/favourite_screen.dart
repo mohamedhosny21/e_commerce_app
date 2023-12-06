@@ -48,7 +48,7 @@ class FavouriteScreen extends StatelessWidget {
                     key: ValueKey(favoriteItems[index].id),
                     onDismissed: (direction) {
                       favoritePizzaCubit.deleteFromFavoriteDatabase(
-                          favoriteItems[index].id!, favoriteItems[index]);
+                          favoriteItems[index].id, favoriteItems[index]);
                     },
                     child: GestureDetector(
                       onTap: () {
@@ -94,8 +94,7 @@ class FavouriteScreen extends StatelessWidget {
                                               onPressed: () {
                                                 favoritePizzaCubit
                                                     .deleteFromFavoriteDatabase(
-                                                        favoriteItems[index]
-                                                            .id!,
+                                                        favoriteItems[index].id,
                                                         favoriteItems[index]);
                                               },
                                               icon: const Icon(

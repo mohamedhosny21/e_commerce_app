@@ -19,6 +19,7 @@ class CartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    PizzaOrderCubit pizzaOrderCubit = BlocProvider.of<PizzaOrderCubit>(context);
     return Container(
       margin: const EdgeInsetsDirectional.only(top: 10),
       child: Card(
@@ -86,13 +87,8 @@ class CartItem extends StatelessWidget {
                               child:
                                   BlocBuilder<PizzaOrderCubit, PizzaOrderState>(
                                 builder: (context, state) {
-                                  BlocProvider.of<PizzaOrderCubit>(context)
-                                      .updatePizzaPrice(
-                                          pizzaModel.pizzaSizeIndex!,
-                                          pizzaModel,
-                                          context);
                                   return Text(
-                                    '\$ ${BlocProvider.of<PizzaOrderCubit>(context).currentPrice.toStringAsFixed(2)}',
+                                    '\$ ${pizzaOrderCubit.showPizzaPrice(pizzaModel, context).toStringAsFixed(2)}',
                                     style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black,
@@ -106,11 +102,11 @@ class CartItem extends StatelessWidget {
                             child: buildAddAndRemoveContainer(
                                 color: Colors.grey.shade100,
                                 onPressed: () {
-                                  BlocProvider.of<PizzaOrderCubit>(context)
-                                      .decrementPizzaOrder(
-                                          context,
-                                          pizzaModel.pizzaQuantity!,
-                                          pizzaModel);
+                                  pizzaOrderCubit.decrementPizzaOrder(
+                                      context,
+                                      pizzaOrderCubit.showPizzaQuantity(
+                                          pizzaModel, context),
+                                      pizzaModel);
                                 },
                                 icon: Icons.remove),
                           ),
@@ -119,7 +115,7 @@ class CartItem extends StatelessWidget {
                                 BlocBuilder<PizzaOrderCubit, PizzaOrderState>(
                               builder: (context, state) {
                                 return Text(
-                                  '${pizzaModel.pizzaQuantity}',
+                                  '${pizzaOrderCubit.showPizzaQuantity(pizzaModel, context)}',
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -133,11 +129,11 @@ class CartItem extends StatelessWidget {
                             child: buildAddAndRemoveContainer(
                                 color: Colors.grey.shade100,
                                 onPressed: () {
-                                  BlocProvider.of<PizzaOrderCubit>(context)
-                                      .incrementPizzaOrder(
-                                          context,
-                                          pizzaModel.pizzaQuantity!,
-                                          pizzaModel);
+                                  pizzaOrderCubit.incrementPizzaOrder(
+                                      context,
+                                      pizzaOrderCubit.showPizzaQuantity(
+                                          pizzaModel, context),
+                                      pizzaModel);
                                 },
                                 icon: Icons.add),
                           )
