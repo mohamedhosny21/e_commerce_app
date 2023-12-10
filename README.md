@@ -2,10 +2,10 @@
 *Some images for the project*
 
 
-![home1](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/ad549bd4-24d1-45fe-8e0d-3074db1da221)
+![home1](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/ad549bd4-24d1-45fe-8e0d-3074db1da221) ![home2](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/d70646c4-a895-4be2-909e-fd50bfcc5609)
 
 
-![home2](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/d70646c4-a895-4be2-909e-fd50bfcc5609)
+
 
 
 ![drawerPNG](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/fbf23588-3842-400d-a871-60e7c700e1e2)
