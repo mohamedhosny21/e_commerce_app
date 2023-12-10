@@ -15,6 +15,7 @@ A new Flutter project.
 
 ![menu](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/fcbcfc6e-5d3c-4384-9b87-adbcaf6a6de9)
 
+![search](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/f4146567-9e13-4c36-a086-10890ef62b97)
 
 ![favorites](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/137df7ee-ceb1-4180-b67d-5b51cf5122dc)
 
