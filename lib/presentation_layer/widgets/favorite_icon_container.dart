@@ -25,8 +25,8 @@ class FavoriteIcon extends StatelessWidget {
       margin: margin,
       width: width,
       height: height,
-      decoration: const BoxDecoration(
-          color: MyColors.myNavyBlue, shape: BoxShape.circle),
+      decoration:
+          const BoxDecoration(color: MyColors.navyBlue, shape: BoxShape.circle),
       child: BlocBuilder<FavoritePizzaCubit, FavoritePizzaState>(
         builder: (context, state) {
           FavoritePizzaCubit favoritePizzaCubit =

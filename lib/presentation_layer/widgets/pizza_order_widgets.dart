@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home_slice/constants/dimensions.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 import '../../business_logic_layer/cubit/pizza_order_cubit/cubit/pizza_order_cubit.dart';
 import '../../constants/colors.dart';
@@ -49,16 +50,12 @@ Row buildDeliveryTimeRow() {
   return const Row(
     children: [
       Text('Delivery Time'),
-      SizedBox(
-        width: 10,
-      ),
+      AppDimensions.horizontalSpacingDefault,
       Icon(
         Icons.alarm,
         color: Colors.purple,
       ),
-      SizedBox(
-        width: 5,
-      ),
+      AppDimensions.horizontalSpacingS,
       Text('15 min'),
     ],
   );
@@ -89,7 +86,7 @@ class BuildAllPizzaSizeContainers extends StatelessWidget {
           children: [
             Expanded(
                 child: buildPizzaSizeContainer(
-              color: pizzaSizeIndex == 1 ? MyColors.myPink : Colors.white,
+              color: pizzaSizeIndex == 1 ? MyColors.pink : Colors.white,
               text: 'Small',
               ontap: () {
                 if (pizzaSizeIndex != 1) {
@@ -99,12 +96,10 @@ class BuildAllPizzaSizeContainers extends StatelessWidget {
                 }
               },
             )),
-            const SizedBox(
-              width: 10,
-            ),
+            AppDimensions.horizontalSpacingDefault,
             Expanded(
                 child: buildPizzaSizeContainer(
-              color: pizzaSizeIndex == 2 ? MyColors.myPink : Colors.white,
+              color: pizzaSizeIndex == 2 ? MyColors.pink : Colors.white,
               text: 'Medium',
               ontap: () {
                 if (pizzaSizeIndex != 2) {
@@ -114,12 +109,10 @@ class BuildAllPizzaSizeContainers extends StatelessWidget {
                 }
               },
             )),
-            const SizedBox(
-              width: 10,
-            ),
+            AppDimensions.horizontalSpacingDefault,
             Expanded(
                 child: buildPizzaSizeContainer(
-              color: pizzaSizeIndex == 3 ? MyColors.myPink : Colors.white,
+              color: pizzaSizeIndex == 3 ? MyColors.pink : Colors.white,
               text: 'Large',
               ontap: () {
                 if (pizzaSizeIndex != 3) {

@@ -24,7 +24,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(
         title ?? '',
-        style: const TextStyle(color: MyColors.myNavyBlue),
+        style: const TextStyle(color: MyColors.navyBlue),
       ),
       elevation: elevation ?? 0.0,
       backgroundColor: color ?? Colors.white,
@@ -34,7 +34,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
               icon: const Icon(
                 Icons.menu,
                 size: 35.0,
-                color: MyColors.myNavyBlue,
+                color: MyColors.navyBlue,
               )),
       actions: actions,
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_slice/business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
 import 'package:home_slice/business_logic_layer/cubit/pizza_order_cubit/cubit/pizza_order_cubit.dart';
+import 'package:home_slice/constants/dimensions.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 
 import '../../constants/colors.dart';
@@ -18,7 +19,7 @@ class LowerButton extends StatelessWidget {
     return BlocBuilder<PizzaOrderCubit, PizzaOrderState>(
       builder: (context, state) {
         return Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(30.0, 0, 30, 20),
+          padding: AppDimensions.paddingFromSTEB,
           child: BlocBuilder<CartCubit, CartState>(
             builder: (context, state) {
               final CartCubit cartCubit = BlocProvider.of<CartCubit>(context);
@@ -38,7 +39,7 @@ class LowerButton extends StatelessWidget {
                         .insertIntoCartDatabase(pizzaModel);
                   }
                 },
-                color: MyColors.myNavyBlue,
+                color: MyColors.navyBlue,
                 textColor: Colors.white,
                 height: 50,
                 child: Row(
@@ -48,9 +49,7 @@ class LowerButton extends StatelessWidget {
                       isAddedToCart ? 'Remove From Cart' : 'Add To Cart',
                       style: const TextStyle(fontSize: 20),
                     ),
-                    const SizedBox(
-                      width: 10,
-                    ),
+                    AppDimensions.horizontalSpacingDefault,
                     Icon(
                       isAddedToCart
                           ? Icons.remove_shopping_cart_rounded

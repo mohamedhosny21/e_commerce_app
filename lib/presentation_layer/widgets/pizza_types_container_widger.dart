@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_slice/constants/colors.dart';
+import 'package:home_slice/constants/dimensions.dart';
 import 'package:home_slice/constants/strings.dart';
 
 // ignore: must_be_immutable
@@ -36,20 +37,16 @@ class PizzaTypesContainer extends StatelessWidget {
             placeholder: loadingGif,
             image: image,
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          AppDimensions.verticalSpacingDefault,
           Text(
             category ?? '',
             style: const TextStyle(
-                color: MyColors.myNavyBlue,
+                color: MyColors.navyBlue,
                 fontSize: 20,
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          AppDimensions.verticalSpacingSmall,
           Text(
             descText ?? '',
             style: const TextStyle(
@@ -59,12 +56,10 @@ class PizzaTypesContainer extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          AppDimensions.verticalSpacingSmall,
           MaterialButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/pizza_menu_screen',
+              Navigator.pushNamed(context, pizzaMenuScreen,
                   arguments: category);
             },
             color: Colors.white,

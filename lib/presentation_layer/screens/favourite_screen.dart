@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_slice/business_logic_layer/cubit/favorite_pizza_cubit/cubit/favorite_pizza_cubit.dart';
 import 'package:home_slice/constants/colors.dart';
+import 'package:home_slice/constants/dimensions.dart';
 import 'package:home_slice/constants/strings.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 import 'package:home_slice/presentation_layer/widgets/appbar_widget.dart';
@@ -52,7 +53,7 @@ class FavouriteScreen extends StatelessWidget {
                     },
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/pizza_order_screen',
+                        Navigator.pushNamed(context, pizzaOrderScreen,
                             arguments: {'pizzaModel': favoriteItems[index]});
                       },
                       child: Container(
@@ -71,9 +72,7 @@ class FavouriteScreen extends StatelessWidget {
                                       image: favoriteItems[index]
                                           .image
                                           .toString()),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
+                                  AppDimensions.horizontalSpacingDefault,
                                   Expanded(
                                     flex: 2,
                                     child: Text(
@@ -87,7 +86,7 @@ class FavouriteScreen extends StatelessWidget {
                                   Expanded(
                                       child: Container(
                                           decoration: BoxDecoration(
-                                              color: MyColors.myNavyBlue,
+                                              color: MyColors.navyBlue,
                                               shape: BoxShape.circle,
                                               border: Border.all()),
                                           child: IconButton(

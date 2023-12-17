@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 
 part 'pizza_order_state.dart';
@@ -12,9 +10,7 @@ class PizzaOrderCubit extends Cubit<PizzaOrderState> {
 
 //update pizza quantity in both pizza order screen and cart screen at the same time if one is updated (incremented or decremented)
   void changePizzaQuantity(
-      PizzaModel pizzaModel, int pizzaQuantity, BuildContext context) {
-    final List<PizzaModel> cartItems =
-        BlocProvider.of<CartCubit>(context).cartPizzaItems;
+      PizzaModel pizzaModel, int pizzaQuantity, List<PizzaModel> cartItems) {
     final int index = cartItems.indexWhere((element) =>
         element.id == pizzaModel.id &&
         element.pizzaSizeIndex == pizzaModel.pizzaSizeIndex);
@@ -37,26 +33,25 @@ class PizzaOrderCubit extends Cubit<PizzaOrderState> {
       }
     }
 
-    updatePizzaPrice(pizzaModel, context);
-    BlocProvider.of<CartCubit>(context).updateToCartDatabase(pizzaModel);
+    updatePizzaPrice(pizzaModel, cartItems);
 
     emit(PizzaQuantityChanged());
   }
 
   void incrementPizzaOrder(
-      BuildContext context, int pizzaQuantity, PizzaModel pizzaModel) {
+      List<PizzaModel> cartItems, int pizzaQuantity, PizzaModel pizzaModel) {
     pizzaQuantity++;
-    changePizzaQuantity(pizzaModel, pizzaQuantity, context);
+    changePizzaQuantity(pizzaModel, pizzaQuantity, cartItems);
 
     emit(OnIncrementPizzaOrder());
   }
 
   void decrementPizzaOrder(
-      BuildContext context, int pizzaQuantity, PizzaModel pizzaModel) {
+      List<PizzaModel> cartItems, int pizzaQuantity, PizzaModel pizzaModel) {
     if (pizzaQuantity > 1) {
       pizzaQuantity--;
 
-      changePizzaQuantity(pizzaModel, pizzaQuantity, context);
+      changePizzaQuantity(pizzaModel, pizzaQuantity, cartItems);
     }
     emit(OnDecrementPizzaOrder());
   }
@@ -82,9 +77,7 @@ class PizzaOrderCubit extends Cubit<PizzaOrderState> {
     return pizzaSizeIndex == 1 ? 0.5 : (pizzaSizeIndex == 2 ? 1 : 2);
   }
 
-  int showPizzaQuantity(PizzaModel pizzaModel, BuildContext context) {
-    final List<PizzaModel> cartItems =
-        BlocProvider.of<CartCubit>(context).cartPizzaItems;
+  int showPizzaQuantity(PizzaModel pizzaModel, List<PizzaModel> cartItems) {
     final int index = cartItems.indexWhere((element) =>
         element.id == pizzaModel.id &&
         element.pizzaSizeIndex == pizzaModel.pizzaSizeIndex);
@@ -100,9 +93,7 @@ class PizzaOrderCubit extends Cubit<PizzaOrderState> {
         getPizzaSizeFactor(pizzaModel.pizzaSizeIndex!);
   }
 
-  void updatePizzaPrice(PizzaModel pizzaModel, BuildContext context) {
-    final List<PizzaModel> cartItems =
-        BlocProvider.of<CartCubit>(context).cartPizzaItems;
+  void updatePizzaPrice(PizzaModel pizzaModel, List<PizzaModel> cartItems) {
     final int index = cartItems.indexWhere((element) =>
         element.id == pizzaModel.id &&
         element.pizzaSizeIndex == pizzaModel.pizzaSizeIndex);
@@ -146,8 +137,8 @@ class PizzaOrderCubit extends Cubit<PizzaOrderState> {
     }
   }
 
-  num showPizzaPrice(PizzaModel pizzaModel, BuildContext context) {
-    updatePizzaPrice(pizzaModel, context);
+  num showPizzaPrice(PizzaModel pizzaModel, List<PizzaModel> cartItems) {
+    updatePizzaPrice(pizzaModel, cartItems);
 
     switch (pizzaModel.pizzaSizeIndex) {
       case 1:

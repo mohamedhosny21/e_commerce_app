@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:home_slice/constants/colors.dart';
 
+import '../../constants/dimensions.dart';
+
 Widget buildDrawer() {
   return Drawer(
     child: ListView(children: [
       Container(
         height: 300,
-        decoration: const BoxDecoration(color: MyColors.myNavyBlue),
+        decoration: const BoxDecoration(color: MyColors.navyBlue),
         child: const DrawerHeader(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -17,9 +19,7 @@ Widget buildDrawer() {
               backgroundImage: NetworkImage(
                   'https://t3.ftcdn.net/jpg/05/64/57/00/240_F_564570063_8moqE2rAG9i19zIgKu0GHmH5BDNP0ecu.png'),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            AppDimensions.verticalSpacingSmall,
             Text(
               'Mohamed Hosny',
               style: TextStyle(
@@ -27,9 +27,7 @@ Widget buildDrawer() {
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
-              height: 15,
-            ),
+            AppDimensions.verticalSpacingMedium,
             Text('Mohamed@gmail.com',
                 style: TextStyle(
                     color: Colors.white,

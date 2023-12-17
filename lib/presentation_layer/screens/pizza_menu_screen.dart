@@ -72,15 +72,29 @@ class _PizzaMenuScreenState extends State<PizzaMenuScreen> {
                 },
                 listener: (context, state) {
                   if (state is PizzaErrorState) {
-                    ScaffoldMessenger.of(context)
-                        .showSnackBar(SnackBar(content: Text(state.errorMsg)));
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        backgroundColor: Colors.black,
+                        content: ListTile(
+                          leading: const Icon(
+                            Icons.error,
+                            color: Colors.redAccent,
+                            size: 30,
+                          ),
+                          title: Text(
+                            state.errorMsg ?? 'Ooops,Something went wrong!!',
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 18),
+                          ),
+                        )));
                   }
                 },
                 builder: (context, state) {
                   if (state is LoadingState) {
                     return const Center(
                         child: CircularProgressIndicator(
-                      color: MyColors.myNavyBlue,
+                      color: MyColors.navyBlue,
                     ));
                   } else if (state is PizzaLoadedState) {
                     allPizza = state.allPizza;

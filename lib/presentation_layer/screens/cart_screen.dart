@@ -36,7 +36,7 @@ class _CartScreenState extends State<CartScreen> {
             icon: const Icon(
               Icons.menu,
               size: 35.0,
-              color: MyColors.myNavyBlue,
+              color: MyColors.navyBlue,
             )),
       ),
       body: BlocBuilder<CartCubit, CartState>(

@@ -4,6 +4,8 @@ import 'package:home_slice/constants/strings.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 import 'package:home_slice/presentation_layer/widgets/favorite_icon_container.dart';
 
+import '../../constants/dimensions.dart';
+
 class PizzaWidget extends StatelessWidget {
   final PizzaModel pizzaModel;
 
@@ -19,7 +21,7 @@ class PizzaWidget extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, '/pizza_order_screen',
+            Navigator.pushNamed(context, pizzaOrderScreen,
                 arguments: pizzaModel);
           },
           child: Card(
@@ -39,9 +41,7 @@ class PizzaWidget extends StatelessWidget {
                           fit: BoxFit.fill,
                         )
                       : Container(),
-                  const SizedBox(
-                    width: 10,
-                  ),
+                  AppDimensions.horizontalSpacingDefault,
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,13 +49,11 @@ class PizzaWidget extends StatelessWidget {
                         Text(
                           pizzaModel.pizzaName.toString(),
                           style: const TextStyle(
-                              color: MyColors.myNavyBlue,
+                              color: MyColors.navyBlue,
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
                         ),
-                        const SizedBox(
-                          height: 15,
-                        ),
+                        AppDimensions.verticalSpacingMedium,
                         Text(
                           pizzaModel.menuDescription.toString(),
                           maxLines: 4,
@@ -71,7 +69,7 @@ class PizzaWidget extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        '\$ ${pizzaModel.originalPrice.toStringAsFixed(2)}',
+                        '\$${pizzaModel.originalPrice.toStringAsFixed(2)}',
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
@@ -79,9 +77,7 @@ class PizzaWidget extends StatelessWidget {
                             fontSize: 16,
                             fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(
-                        height: 65,
-                      ),
+                      AppDimensions.verticalSpacingExtraExtraLarge,
                       FavoriteIcon(
                           width: 50,
                           height: 50,

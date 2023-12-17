@@ -6,6 +6,8 @@ import 'package:home_slice/presentation_layer/widgets/appbar_widget.dart';
 import 'package:home_slice/presentation_layer/widgets/drawer_widget.dart';
 import 'package:home_slice/presentation_layer/widgets/pizza_types_container_widger.dart';
 
+import '../../constants/dimensions.dart';
+
 class HomeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -34,15 +36,13 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 40.0,
                       fontWeight: FontWeight.bold,
-                      color: MyColors.myNavyBlue),
+                      color: MyColors.navyBlue),
                 ),
                 const Text(
                   'Our daily fresh pizza',
                   style: TextStyle(fontSize: 20.0, color: Colors.grey),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                AppDimensions.verticalSpacingLarge,
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -60,11 +60,9 @@ class HomeScreen extends StatelessWidget {
                                       'A collection of best tasting pizza and most popular one',
                                   image:
                                       'https://pizzamiamiami.com/wp-content/uploads/2020/07/four-cheese.png',
-                                  color: MyColors.myYellow,
+                                  color: MyColors.yellow,
                                   height: 350),
-                              const SizedBox(
-                                height: 20,
-                              ),
+                              AppDimensions.verticalSpacingDefault,
                               Column(
                                 children: [
                                   PizzaTypesContainer(
@@ -73,20 +71,18 @@ class HomeScreen extends StatelessWidget {
                                       category: 'BBQ Chicken Pizza',
                                       descText:
                                           'A collection of best tasting pizza and most popular one',
-                                      color: MyColors.myAlabaster,
+                                      color: MyColors.alabaster,
                                       height: 370,
                                       image:
                                           'https://t3.ftcdn.net/jpg/06/09/87/68/240_F_609876883_b38hf8FSuAJq9U5L0nkVD3zpmoCce2T6.png'),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
+                                  AppDimensions.verticalSpacingDefault,
                                   PizzaTypesContainer(
                                       buttonText: 'Show Now',
                                       onPressed: () {},
                                       category: 'Vegetarian Pizza',
                                       descText:
                                           'A collection of best tasting pizza and most popular one',
-                                      color: MyColors.myLightGreen,
+                                      color: MyColors.lightGreen,
                                       height: 350,
                                       image:
                                           'https://t3.ftcdn.net/jpg/06/32/67/10/240_F_632671029_6O9QAth8xN31O5RFCzFndMuFoNHMUHSa.png')
@@ -97,9 +93,7 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      width: 20,
-                    ),
+                    AppDimensions.horizontalSpacingMedium,
                     Expanded(
                         child: Column(
                       children: [
@@ -108,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                             Container(
                               height: 165,
                               decoration: BoxDecoration(
-                                  color: MyColors.myPink,
+                                  color: MyColors.pink,
                                   borderRadius: BorderRadius.circular(30)),
                             ),
                             const Padding(
@@ -119,9 +113,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
+                        AppDimensions.verticalSpacingDefault,
                         Column(
                           children: [
                             PizzaTypesContainer(
@@ -130,13 +122,11 @@ class HomeScreen extends StatelessWidget {
                                 category: 'Pepperoni Pizza',
                                 descText:
                                     'A collection of best tasting pizza and most popular one',
-                                color: MyColors.myVeryPaleBlue,
+                                color: MyColors.veryPaleBlue,
                                 height: 350,
                                 image:
                                     'https://pngimg.com/uploads/pizza/small/pizza_PNG43991.png'),
-                            const SizedBox(
-                              height: 20,
-                            ),
+                            AppDimensions.verticalSpacingDefault,
                             Column(
                               children: [
                                 PizzaTypesContainer(
@@ -145,20 +135,18 @@ class HomeScreen extends StatelessWidget {
                                     category: 'Hawaiian Pizza',
                                     descText:
                                         'A collection of best tasting pizza and most popular one',
-                                    color: MyColors.myWater,
+                                    color: MyColors.water,
                                     height: 335,
                                     image:
                                         'https://t3.ftcdn.net/jpg/06/09/87/68/240_F_609876893_jirWEbVuSMvlrWeYy1w3mMVjoE3apaMS.png'),
-                                const SizedBox(
-                                  height: 20,
-                                ),
+                                AppDimensions.verticalSpacingDefault,
                                 PizzaTypesContainer(
                                     buttonText: 'Show Now',
                                     onPressed: () {},
                                     category: 'Margherita Pizza',
                                     descText:
                                         'A collection of best tasting pizza and most popular one',
-                                    color: MyColors.myLightGrayishBlue,
+                                    color: MyColors.lightGrayishBlue,
                                     height: 350,
                                     image:
                                         'https://t4.ftcdn.net/jpg/06/08/19/47/240_F_608194708_xV1BFnERt6hWPUsXcMop4IH4pIbZqa5t.png'),
@@ -170,9 +158,7 @@ class HomeScreen extends StatelessWidget {
                     )),
                   ],
                 ),
-                const SizedBox(
-                  height: 60,
-                ),
+                AppDimensions.verticalSpacingExtraLarge,
               ],
             ),
           ),

@@ -19,7 +19,7 @@ class NavBar extends StatelessWidget {
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
             onGenerateRoute: AppRouter().generateRoute),
         icon: const Icon(Icons.home),
-        activeColorPrimary: MyColors.myPink,
+        activeColorPrimary: MyColors.pink,
         inactiveColorPrimary: Colors.white,
         title: 'Home',
       ),
@@ -27,7 +27,7 @@ class NavBar extends StatelessWidget {
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
             onGenerateRoute: AppRouter().generateRoute),
         icon: const Icon(Icons.favorite),
-        activeColorPrimary: MyColors.myPink,
+        activeColorPrimary: MyColors.pink,
         inactiveColorPrimary: Colors.white,
         title: 'Favourites',
       ),
@@ -35,7 +35,7 @@ class NavBar extends StatelessWidget {
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
             onGenerateRoute: AppRouter().generateRoute),
         icon: const Icon(Icons.shopping_cart),
-        activeColorPrimary: MyColors.myPink,
+        activeColorPrimary: MyColors.pink,
         inactiveColorPrimary: Colors.white,
         title: 'Cart',
       )
@@ -48,7 +48,7 @@ class NavBar extends StatelessWidget {
       context,
       screens: _buildScreens(),
       items: _navBarItems(),
-      backgroundColor: MyColors.myNavyBlue,
+      backgroundColor: MyColors.navyBlue,
       confineInSafeArea: true,
       controller: PersistentTabController(initialIndex: 0),
       hideNavigationBarWhenKeyboardShows: true,

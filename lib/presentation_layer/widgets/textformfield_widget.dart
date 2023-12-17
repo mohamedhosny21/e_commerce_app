@@ -35,7 +35,7 @@ Widget buildTextFormField(
       decoration: InputDecoration(
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
-            borderSide: const BorderSide(color: MyColors.myNavyBlue)),
+            borderSide: const BorderSide(color: MyColors.navyBlue)),
         hintText: hintText,
         hintStyle: hintStyle,
         label: label,

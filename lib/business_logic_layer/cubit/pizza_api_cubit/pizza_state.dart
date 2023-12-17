@@ -13,7 +13,7 @@ class PizzaLoadedState extends PizzaState {
 }
 
 class PizzaErrorState extends PizzaState {
-  final String errorMsg;
+  final String? errorMsg;
 
   PizzaErrorState({required this.errorMsg});
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_slice/business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
+import 'package:home_slice/constants/dimensions.dart';
 
 import '../../constants/colors.dart';
 
@@ -18,7 +19,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
           color: Colors.white,
           borderRadius: const BorderRadius.vertical(top: Radius.circular(20))),
       padding: const EdgeInsetsDirectional.fromSTEB(10, 20, 10, 20),
-      height: 270,
+      height: 260,
       child: Column(
         children: [
           const Center(
@@ -26,7 +27,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
               'Payment Details',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: MyColors.myNavyBlue,
+                  color: MyColors.navyBlue,
                   fontSize: 20),
             ),
           ),
@@ -35,7 +36,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
               title: const Text(
                 'Total Items :',
                 style: TextStyle(
-                  color: MyColors.myNavyBlue,
+                  color: MyColors.navyBlue,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
@@ -45,7 +46,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
                   return Text(
                     '${cartCubit.cartPizzaItems.length}',
                     style: const TextStyle(
-                      color: MyColors.myNavyBlue,
+                      color: MyColors.navyBlue,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
@@ -59,7 +60,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
               title: const Text(
                 'Sub Total :',
                 style: TextStyle(
-                  color: MyColors.myNavyBlue,
+                  color: MyColors.navyBlue,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
@@ -71,7 +72,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
                   return Text(
                     '\$ ${cartCubit.subTotalPrice.toStringAsFixed(2)}',
                     style: const TextStyle(
-                      color: MyColors.myNavyBlue,
+                      color: MyColors.navyBlue,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
@@ -85,7 +86,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
               title: const Text(
                 'Delivery Fee :',
                 style: TextStyle(
-                  color: MyColors.myNavyBlue,
+                  color: MyColors.navyBlue,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
@@ -95,7 +96,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
                   return Text(
                     '\$ ${cartCubit.deliveryFee}',
                     style: const TextStyle(
-                      color: MyColors.myNavyBlue,
+                      color: MyColors.navyBlue,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
@@ -108,7 +109,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.only(top: 30),
               child: const Divider(
-                color: MyColors.myNavyBlue,
+                color: MyColors.navyBlue,
                 thickness: 2,
               ),
             ),
@@ -119,7 +120,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
               title: const Text(
                 'Total Price :',
                 style: TextStyle(
-                  color: MyColors.myNavyBlue,
+                  color: MyColors.navyBlue,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
@@ -131,7 +132,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
                   return Text(
                     '\$ ${cartCubit.totalPrice.toStringAsFixed(2)}',
                     style: const TextStyle(
-                      color: MyColors.myNavyBlue,
+                      color: MyColors.navyBlue,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
@@ -140,14 +141,12 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          AppDimensions.verticalSpacingDefault,
           MaterialButton(
             height: 50,
             onPressed: () {},
             textColor: Colors.white,
-            color: MyColors.myNavyBlue,
+            color: MyColors.navyBlue,
             minWidth: double.infinity,
             child: const Text(
               'Order Now',

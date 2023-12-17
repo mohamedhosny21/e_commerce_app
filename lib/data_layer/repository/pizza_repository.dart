@@ -3,10 +3,16 @@ import 'package:home_slice/data_layer/webservices/pizza_webservices.dart';
 
 class PizzaRepository {
   final PizzaWebServices pizzaWebServices;
-
+  String? errorStatusMsg;
   PizzaRepository(this.pizzaWebServices);
   Future<List<PizzaModel>> getPizzaRepo(String pizzaCategory) async {
-    final allPizza = await pizzaWebServices.getPizzaWebservices(pizzaCategory);
-    return allPizza.map((pizza) => PizzaModel.fromJson(pizza)).toList();
+    try {
+      final allPizza =
+          await pizzaWebServices.getPizzaWebservices(pizzaCategory);
+      return allPizza.map((pizza) => PizzaModel.fromJson(pizza)).toList();
+    } catch (error) {
+      errorStatusMsg = pizzaWebServices.errorStatusMsg;
+      return throw Exception(error);
+    }
   }
 }
