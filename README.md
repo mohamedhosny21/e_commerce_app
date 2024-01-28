@@ -3,6 +3,7 @@
 A new Flutter project.
 
 ## Getting Started
+![Screenshot_1706462689](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/ea49d715-6859-4d83-bbc1-3e09119dc5d7)
 
 ![home1](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/ad549bd4-24d1-45fe-8e0d-3074db1da221) 
 
