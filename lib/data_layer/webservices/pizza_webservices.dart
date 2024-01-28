@@ -7,18 +7,19 @@ class PizzaWebServices {
   String? errorStatusMsg;
   Future<List<dynamic>> getPizzaWebservices(String pizzaCategory) async {
     try {
-      Response response = await DioConnections()
-          .dio
-          .get(pizzaEndPoint, queryParameters: {'category': pizzaCategory});
+      Response response =
+          await DioConnections(baseUrl: ApiConstants.pizzaBaseUrl).dio.get(
+              ApiConstants.pizzaEndPoint,
+              queryParameters: {'category': pizzaCategory});
       debugPrint('Status Code : ${response.statusCode}');
 
       return response.data;
     } on DioException catch (error) {
       errorStatusMsg = error.response?.statusMessage;
       debugPrint('Status Code : ${error.response?.statusCode}');
-      return throw Exception(error.toString());
+      throw Exception(error.toString());
     } catch (error) {
-      return throw Exception(error.toString());
+      throw Exception(error.toString());
     }
   }
 }

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_slice/constants/styles.dart';
 
 import '../../constants/colors.dart';
 
-class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const BuildAppBar(
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const MyAppBar(
       {super.key,
       this.leading,
       this.actions,
       this.color,
-      this.height = kToolbarHeight,
       this.onPressed,
       this.title,
       this.elevation});
   final Widget? leading;
   final List<Widget>? actions;
   final Color? color;
-  final double height;
   final VoidCallback? onPressed;
   final String? title;
   final double? elevation;
@@ -24,16 +24,16 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(
         title ?? '',
-        style: const TextStyle(color: MyColors.navyBlue),
+        style: MyTextStyles.font16NavyBlueRegular,
       ),
       elevation: elevation ?? 0.0,
       backgroundColor: color ?? Colors.white,
       leading: leading ??
           IconButton(
               onPressed: onPressed,
-              icon: const Icon(
+              icon: Icon(
                 Icons.menu,
-                size: 35.0,
+                size: 35.0.sp,
                 color: MyColors.navyBlue,
               )),
       actions: actions,
@@ -41,5 +41,5 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(height);
+  Size get preferredSize => Size.fromHeight(kToolbarHeight.h);
 }

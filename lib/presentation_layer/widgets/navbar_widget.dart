@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:home_slice/app_router.dart';
+import 'package:home_slice/routing/app_router.dart';
 import 'package:home_slice/constants/colors.dart';
-import 'package:home_slice/presentation_layer/screens/cart_screen.dart';
-import 'package:home_slice/presentation_layer/screens/favourite_screen.dart';
-import 'package:home_slice/presentation_layer/screens/home_screen.dart';
+import 'package:home_slice/presentation_layer/screens/cart_screen/cart_screen.dart';
+import 'package:home_slice/presentation_layer/screens/favorite_screen/favourite_screen.dart';
+import 'package:home_slice/presentation_layer/screens/home_screen/home_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
 
   List<Widget> _buildScreens() {
-    return [HomeScreen(), FavouriteScreen(), const CartScreen()];
+    return [HomeScreen(), FavouriteScreen(), CartScreen()];
   }
 
   List<PersistentBottomNavBarItem> _navBarItems() {

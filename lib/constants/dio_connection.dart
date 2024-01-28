@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:home_slice/constants/strings.dart';
 
 class DioConnections {
   late Dio dio;
-  DioConnections() {
+  final String baseUrl;
+  DioConnections({required this.baseUrl}) {
     BaseOptions baseOptions = BaseOptions(
-      baseUrl: pizzaBaseUrl,
+      baseUrl: baseUrl,
       connectTimeout: const Duration(seconds: 15),
       receiveDataWhenStatusError: true,
       receiveTimeout: const Duration(seconds: 15),

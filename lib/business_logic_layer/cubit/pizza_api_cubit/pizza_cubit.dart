@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 import 'package:home_slice/data_layer/repository/pizza_repository.dart';
-import 'package:home_slice/data_layer/webservices/pizza_webservices.dart';
 
 part 'pizza_state.dart';
 

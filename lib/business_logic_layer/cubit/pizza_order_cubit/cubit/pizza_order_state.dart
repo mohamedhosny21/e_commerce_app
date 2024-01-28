@@ -11,10 +11,4 @@ class OnDecrementPizzaOrder extends PizzaOrderState {}
 
 class OnPizzaPriceUpdated extends PizzaOrderState {}
 
-class SmallPizzaSizeState extends PizzaOrderState {}
-
-class MediumPizzaSizeState extends PizzaOrderState {}
-
-class LargePizzaSizeState extends PizzaOrderState {}
-
 class PizzaQuantityChanged extends PizzaOrderState {}

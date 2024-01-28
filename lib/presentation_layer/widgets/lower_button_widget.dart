@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_slice/business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
 import 'package:home_slice/business_logic_layer/cubit/pizza_order_cubit/cubit/pizza_order_cubit.dart';
 import 'package:home_slice/constants/dimensions.dart';
+import 'package:home_slice/constants/styles.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 
 import '../../constants/colors.dart';
@@ -19,7 +21,7 @@ class LowerButton extends StatelessWidget {
     return BlocBuilder<PizzaOrderCubit, PizzaOrderState>(
       builder: (context, state) {
         return Padding(
-          padding: AppDimensions.paddingFromSTEB,
+          padding: AppDimensions.paddingFromSTEB_30_0_30_20,
           child: BlocBuilder<CartCubit, CartState>(
             builder: (context, state) {
               final CartCubit cartCubit = BlocProvider.of<CartCubit>(context);
@@ -29,7 +31,7 @@ class LowerButton extends StatelessWidget {
 
               return MaterialButton(
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(20.r)),
                 onPressed: () {
                   if (isAddedToCart) {
                     BlocProvider.of<CartCubit>(context)
@@ -41,15 +43,15 @@ class LowerButton extends StatelessWidget {
                 },
                 color: MyColors.navyBlue,
                 textColor: Colors.white,
-                height: 50,
+                height: 50.h,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       isAddedToCart ? 'Remove From Cart' : 'Add To Cart',
-                      style: const TextStyle(fontSize: 20),
+                      style: MyTextStyles.font20WhiteBold,
                     ),
-                    AppDimensions.horizontalSpacingDefault,
+                    AppDimensions.horizontalSpacing10,
                     Icon(
                       isAddedToCart
                           ? Icons.remove_shopping_cart_rounded

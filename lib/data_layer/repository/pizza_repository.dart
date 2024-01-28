@@ -12,7 +12,7 @@ class PizzaRepository {
       return allPizza.map((pizza) => PizzaModel.fromJson(pizza)).toList();
     } catch (error) {
       errorStatusMsg = pizzaWebServices.errorStatusMsg;
-      return throw Exception(error);
+      throw Exception(error);
     }
   }
 }

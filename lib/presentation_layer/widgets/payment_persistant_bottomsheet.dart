@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_slice/business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
 import 'package:home_slice/constants/dimensions.dart';
+import 'package:home_slice/constants/styles.dart';
 
 import '../../constants/colors.dart';
 
@@ -17,39 +19,28 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
       decoration: BoxDecoration(
           border: Border.all(),
           color: Colors.white,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(20))),
-      padding: const EdgeInsetsDirectional.fromSTEB(10, 20, 10, 20),
-      height: 260,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20.r))),
+      padding: AppDimensions.paddingSymmetricH10V20,
+      height: 260.h,
       child: Column(
         children: [
-          const Center(
+          Center(
             child: Text(
               'Payment Details',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: MyColors.navyBlue,
-                  fontSize: 20),
+              style: MyTextStyles.font20NavyBlueBold,
             ),
           ),
           Expanded(
             child: ListTile(
-              title: const Text(
+              title: Text(
                 'Total Items :',
-                style: TextStyle(
-                  color: MyColors.navyBlue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
+                style: MyTextStyles.font18NavyBlueBold,
               ),
               trailing: BlocBuilder<CartCubit, CartState>(
                 builder: (context, state) {
                   return Text(
                     '${cartCubit.cartPizzaItems.length}',
-                    style: const TextStyle(
-                      color: MyColors.navyBlue,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
+                    style: MyTextStyles.font18NavyBlueBold,
                   );
                 },
               ),
@@ -57,13 +48,9 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
           ),
           Expanded(
             child: ListTile(
-              title: const Text(
+              title: Text(
                 'Sub Total :',
-                style: TextStyle(
-                  color: MyColors.navyBlue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
+                style: MyTextStyles.font18NavyBlueBold,
               ),
               trailing: BlocBuilder<CartCubit, CartState>(
                 builder: (context, state) {
@@ -71,11 +58,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
                   // print(cartCubit.subTotalPrice);
                   return Text(
                     '\$ ${cartCubit.subTotalPrice.toStringAsFixed(2)}',
-                    style: const TextStyle(
-                      color: MyColors.navyBlue,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
+                    style: MyTextStyles.font18NavyBlueBold,
                   );
                 },
               ),
@@ -83,23 +66,15 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
           ),
           Expanded(
             child: ListTile(
-              title: const Text(
+              title: Text(
                 'Delivery Fee :',
-                style: TextStyle(
-                  color: MyColors.navyBlue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
+                style: MyTextStyles.font18NavyBlueBold,
               ),
               trailing: BlocBuilder<CartCubit, CartState>(
                 builder: (context, state) {
                   return Text(
                     '\$ ${cartCubit.deliveryFee}',
-                    style: const TextStyle(
-                      color: MyColors.navyBlue,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
+                    style: MyTextStyles.font18NavyBlueBold,
                   );
                 },
               ),
@@ -107,7 +82,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              margin: const EdgeInsets.only(top: 30),
+              margin: AppDimensions.marginTop30,
               child: const Divider(
                 color: MyColors.navyBlue,
                 thickness: 2,
@@ -117,13 +92,9 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
           Expanded(
             flex: 2,
             child: ListTile(
-              title: const Text(
+              title: Text(
                 'Total Price :',
-                style: TextStyle(
-                  color: MyColors.navyBlue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
+                style: MyTextStyles.font18NavyBlueBold,
               ),
               trailing: BlocBuilder<CartCubit, CartState>(
                 builder: (context, state) {
@@ -131,26 +102,22 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
                   // print(cartCubit.totalPrice);
                   return Text(
                     '\$ ${cartCubit.totalPrice.toStringAsFixed(2)}',
-                    style: const TextStyle(
-                      color: MyColors.navyBlue,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
+                    style: MyTextStyles.font18NavyBlueBold,
                   );
                 },
               ),
             ),
           ),
-          AppDimensions.verticalSpacingDefault,
+          AppDimensions.verticalSpacing20,
           MaterialButton(
-            height: 50,
+            height: 45.h,
             onPressed: () {},
             textColor: Colors.white,
             color: MyColors.navyBlue,
             minWidth: double.infinity,
-            child: const Text(
+            child: Text(
               'Order Now',
-              style: TextStyle(fontSize: 20),
+              style: MyTextStyles.font20WhiteBold,
             ),
           )
         ],

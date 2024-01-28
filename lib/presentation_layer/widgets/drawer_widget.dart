@@ -1,64 +1,84 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_slice/business_logic_layer/cubit/authentication_cubit/cubit/authentication_cubit.dart';
 import 'package:home_slice/constants/colors.dart';
-
+import 'package:home_slice/constants/styles.dart';
+import 'package:home_slice/routing/routes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../constants/dimensions.dart';
 
-Widget buildDrawer() {
-  return Drawer(
-    child: ListView(children: [
-      Container(
-        height: 300,
-        decoration: const BoxDecoration(color: MyColors.navyBlue),
-        child: const DrawerHeader(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            CircleAvatar(
-              radius: 80,
-              backgroundColor: Colors.transparent,
-              backgroundImage: NetworkImage(
-                  'https://t3.ftcdn.net/jpg/05/64/57/00/240_F_564570063_8moqE2rAG9i19zIgKu0GHmH5BDNP0ecu.png'),
-            ),
-            AppDimensions.verticalSpacingSmall,
-            Text(
-              'Mohamed Hosny',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
-            AppDimensions.verticalSpacingMedium,
-            Text('Mohamed@gmail.com',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold)),
-          ],
-        )),
-      ),
-      const SizedBox(
-        height: 10,
-      ),
-      ListTile(
-        leading: const Icon(Icons.help),
-        title: const Text('Help'),
-        onTap: () {},
-      ),
-      ListTile(
-        leading: const Icon(Icons.settings),
-        title: const Text('Settings'),
-        onTap: () {},
-      ),
-      ListTile(
-        leading: const Icon(Icons.info),
-        title: const Text('About'),
-        onTap: () {},
-      ),
-      ListTile(
-        leading: const Icon(Icons.logout),
-        title: const Text('LogOut'),
-        onTap: () {},
-      ),
-    ]),
-  );
+class MyDrawer extends StatelessWidget {
+  const MyDrawer({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(children: [
+        Container(
+          height: 300.h,
+          decoration: const BoxDecoration(color: MyColors.navyBlue),
+          child: DrawerHeader(
+              child: FutureBuilder<SharedPreferences>(
+            future: SharedPreferences.getInstance(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                String userName = snapshot.data!.getString('name') ?? '';
+                String userEmail = snapshot.data!.getString('email') ?? '';
+                String userProfilePicture =
+                    snapshot.data!.getString('profile_picture') ?? '';
+
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    CircleAvatar(
+                      radius: 80.r,
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: NetworkImage(userProfilePicture),
+                    ),
+                    AppDimensions.verticalSpacing15,
+                    Text(
+                      userName,
+                      style: MyTextStyles.font20WhiteBold,
+                    ),
+                    AppDimensions.verticalSpacing15,
+                    Text(userEmail, style: MyTextStyles.font14WhiteBold),
+                  ],
+                );
+              } else {
+                return const SizedBox();
+              }
+            },
+          )),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        ListTile(
+          leading: const Icon(Icons.help),
+          title: const Text('Help'),
+          onTap: () {},
+        ),
+        ListTile(
+          leading: const Icon(Icons.settings),
+          title: const Text('Settings'),
+          onTap: () {},
+        ),
+        ListTile(
+          leading: const Icon(Icons.info),
+          title: const Text('About'),
+          onTap: () {},
+        ),
+        ListTile(
+          leading: const Icon(Icons.logout),
+          title: const Text('Log Out'),
+          onTap: () {
+            BlocProvider.of<AuthenticationCubit>(context).signOut();
+            //root navigator=true: Specifies that the root navigator should be used
+            Navigator.of(context, rootNavigator: true).pushNamedAndRemoveUntil(
+                Routes.registerScreen, (route) => false);
+          },
+        ),
+      ]),
+    );
+  }
 }
