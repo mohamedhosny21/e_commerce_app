@@ -4,6 +4,11 @@ A new Flutter project.
 
 ## Getting Started
 
+![Screenshot_1706462891](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/1d3ef037-683e-4169-b6a5-ce471f07f878)
+
+
+![Screenshot_1706462887](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/98c99d4d-ee18-471f-ac62-85b02e855f16)
+
 ![home1](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/ad549bd4-24d1-45fe-8e0d-3074db1da221) 
 
 
