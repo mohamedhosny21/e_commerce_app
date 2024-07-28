@@ -10,6 +10,8 @@ A new Flutter project.
 
 ## Sign In Screen
 
+### with different methods (Facebook,X,Google)
+
 ![signin](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/28688b9f-2b68-4189-8ebd-a617f66645a1)
 
 ## Home Screen
