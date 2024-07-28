@@ -10,7 +10,8 @@ A new Flutter project.
 
 ## Sign In Screen
 
-### with different methods (Facebook,X,Google)
+### with different methods (Email & Password,Facebook,X,Google)
+### with features like : Forgot Password and Email Verification
 
 ![signin](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/28688b9f-2b68-4189-8ebd-a617f66645a1)
 
