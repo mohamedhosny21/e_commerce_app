@@ -4,11 +4,13 @@ A new Flutter project.
 
 ## Getting Started
 
-![signup](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/5de070b4-c52b-42ad-96dd-c604701e582a)
+## Sign UP Screen
 
-![signin](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/28688b9f-2b68-4189-8ebd-a617f66645a1)
+<img src="https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/5de070b4-c52b-42ad-96dd-c604701e582a" width="300" />
 
-![home1](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/ad549bd4-24d1-45fe-8e0d-3074db1da221) 
+<img src="https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/28688b9f-2b68-4189-8ebd-a617f66645a1" width="300" />
+
+<img src="https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/ad549bd4-24d1-45fe-8e0d-3074db1da221" width="300" />
 
 
 ![home2](https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/d70646c4-a895-4be2-909e-fd50bfcc5609)  
