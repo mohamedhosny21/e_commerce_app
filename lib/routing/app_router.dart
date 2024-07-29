@@ -9,10 +9,10 @@ import 'package:home_slice/business_logic_layer/cubit/pizza_order_cubit/cubit/pi
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 import 'package:home_slice/data_layer/repository/pizza_repository.dart';
 import 'package:home_slice/data_layer/webservices/pizza_webservices.dart';
-import 'package:home_slice/presentation_layer/screens/cart_screen/cart_screen.dart';
-import 'package:home_slice/presentation_layer/screens/pizza_order_screen/pizza_order_screen.dart';
-import 'package:home_slice/presentation_layer/screens/pizza_menu_screen/pizza_menu_screen.dart';
-import 'package:home_slice/presentation_layer/screens/register_screen/register_screen.dart';
+import 'package:home_slice/presentation_layer/favorite/favourite_screen.dart';
+import 'package:home_slice/presentation_layer/orders/pizza_order_screen.dart';
+import 'package:home_slice/presentation_layer/menu/pizza_menu_screen.dart';
+import 'package:home_slice/presentation_layer/register/register_screen.dart';
 import 'package:home_slice/presentation_layer/widgets/navbar_widget.dart';
 import 'package:home_slice/routing/routes.dart';
 
@@ -29,20 +29,8 @@ class AppRouter {
     switch (settings.name) {
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (context) => MultiBlocProvider(
-            providers: [
-              BlocProvider<FavoritePizzaCubit>(
-                  create: (context) => FavoritePizzaCubit()),
-              BlocProvider<CartCubit>(
-                create: (context) => CartCubit(),
-              ),
-              BlocProvider<PizzaOrderCubit>(
-                create: (context) => PizzaOrderCubit(),
-              ),
-              BlocProvider<InternetConnectionsCubit>(
-                create: (context) => InternetConnectionsCubit(Connectivity()),
-              )
-            ],
+          builder: (context) => BlocProvider<InternetConnectionsCubit>(
+            create: (context) => InternetConnectionsCubit(Connectivity()),
             child: const NavBar(),
           ),
         );
@@ -51,6 +39,19 @@ class AppRouter {
             builder: (context) => BlocProvider<AuthenticationCubit>(
                   create: (context) => AuthenticationCubit(),
                   child: const RegisterScreen(),
+                ));
+      case Routes.favouriteScreen:
+        return MaterialPageRoute(
+            builder: (context) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider<AuthenticationCubit>(
+                      create: (context) => AuthenticationCubit(),
+                    ),
+                    BlocProvider<FavoritePizzaCubit>(
+                      create: (context) => FavoritePizzaCubit(),
+                    ),
+                  ],
+                  child: FavouriteScreen(),
                 ));
 
       case Routes.pizzaMenuScreen:
@@ -64,21 +65,32 @@ class AppRouter {
               BlocProvider<AuthenticationCubit>.value(
                 value: AuthenticationCubit(),
               ),
+              BlocProvider<FavoritePizzaCubit>.value(
+                  value: FavoritePizzaCubit()),
             ],
             child: PizzaMenuScreen(category: category),
           ),
         );
 
       case Routes.pizzaOrderScreen:
-        // final argumentData = settings.arguments as Map<String, dynamic>;
         final pizzaModel = settings.arguments as PizzaModel;
 
         return MaterialPageRoute(
-            builder: (context) => PizzaOrderScreen(
-                  pizzaModel: pizzaModel,
+            builder: (context) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider<PizzaOrderCubit>.value(
+                      value: PizzaOrderCubit(),
+                    ),
+                    BlocProvider<CartCubit>(
+                      create: (context) => CartCubit(),
+                    ),
+                    BlocProvider<FavoritePizzaCubit>.value(
+                        value: FavoritePizzaCubit()),
+                  ],
+                  child: PizzaOrderScreen(
+                    pizzaModel: pizzaModel,
+                  ),
                 ));
-      case Routes.cartScreen:
-        return MaterialPageRoute(builder: (context) => CartScreen());
     }
     return null;
   }

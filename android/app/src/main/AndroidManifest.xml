@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"     xmlns:tools="http://schemas.android.com/tools">
+>
     <uses-permission android:name="android.permission.INTERNET"/>
 
 <queries>
@@ -7,13 +8,15 @@
     <application
         android:label="home_slice"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        tools:replace="android:label">
         <meta-data 
             android:name="com.facebook.sdk.ApplicationId" 
             android:value="@string/facebook_app_id"/>
         <meta-data
             android:name="com.facebook.sdk.ClientToken" 
             android:value="@string/facebook_client_token"/>
+            <meta-data android:name="com.google.android.gms.wallet.api.enabled" android:value="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -36,6 +39,7 @@
                 <action android:name="android.intent.action.VIEW" />
   <category android:name="android.intent.category.DEFAULT" />
   <category android:name="android.intent.category.BROWSABLE" />
+   <data android:scheme="com.example.home_slice.braintree" />
   <!-- Accepts URIs that begin with "example://gizmos” -->
   <!-- Registered Callback URLs in TwitterApp -->
   <data android:scheme="twitterauth"/>

@@ -1,14 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_slice/presentation_layer/widgets/shared_preferences.dart';
 import 'package:home_slice/routing/app_router.dart';
 import 'package:home_slice/firebase_options.dart';
 import 'package:home_slice/routing/routes.dart';
-
-import 'generated/l10n.dart';
 
 late String initialRoute;
 void main() async {
@@ -41,18 +38,10 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 690),
       minTextAdapt: true,
       builder: (context, child) => MaterialApp(
-        // home: RegisterScreen(),
         debugShowCheckedModeBanner: false,
         title: 'Home Slice',
         initialRoute: initialRoute,
         onGenerateRoute: appRouter.generateRoute,
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: S.delegate.supportedLocales,
       ),
       splitScreenMode: true,
       ensureScreenSize: true,

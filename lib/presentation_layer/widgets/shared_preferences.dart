@@ -23,6 +23,11 @@ Future<String?> getUserIdWithSharedPrefs() async {
   return sharedPreferences.getString('user_id');
 }
 
+Future<String?> getUserNameWithSharedPrefs() async {
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  return sharedPreferences.getString('name');
+}
+
 void saveFacebookUserAuthState({required String accessToken}) async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   sharedPreferences.setString('facebook_token', accessToken);

@@ -10,16 +10,16 @@ class PizzaCubit extends Cubit<PizzaState> {
   String? errorStatusMsg;
   PizzaCubit(this.pizzaRepository) : super(PizzaInitial());
 
-  void getPizzaCubit(String pizzaCategory) {
-    // use Timer to let bloc listener to trigger loading state when cubit function called in initState or buildWidget
-
+  void getPizzaCubit(String pizzaCategory) async {
     emit(LoadingState());
-    pizzaRepository.getPizzaRepo(pizzaCategory).then((value) {
-      emit(PizzaLoadedState(allPizza: value));
-    }).catchError((onError) {
+
+    try {
+      final allPizza = await pizzaRepository.getPizzaRepo(pizzaCategory);
+      emit(PizzaLoadedState(allPizza: allPizza));
+    } catch (error) {
       errorStatusMsg = pizzaRepository.errorStatusMsg;
       debugPrint(onError.toString());
       emit(PizzaErrorState(errorMsg: errorStatusMsg));
-    });
+    }
   }
 }

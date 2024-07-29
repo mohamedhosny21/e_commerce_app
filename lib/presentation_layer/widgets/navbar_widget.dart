@@ -1,66 +1,69 @@
 import 'package:flutter/material.dart';
-import 'package:home_slice/routing/app_router.dart';
-import 'package:home_slice/constants/colors.dart';
-import 'package:home_slice/presentation_layer/screens/cart_screen/cart_screen.dart';
-import 'package:home_slice/presentation_layer/screens/favorite_screen/favourite_screen.dart';
-import 'package:home_slice/presentation_layer/screens/home_screen/home_screen.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-class NavBar extends StatelessWidget {
+import 'package:home_slice/presentation_layer/cart/cart_screen.dart';
+import 'package:home_slice/presentation_layer/favorite/favourite_screen.dart';
+import 'package:home_slice/presentation_layer/home/home_screen.dart';
+
+class NavBar extends StatefulWidget {
   const NavBar({super.key});
 
-  List<Widget> _buildScreens() {
-    return [HomeScreen(), FavouriteScreen(), CartScreen()];
-  }
+  @override
+  State<NavBar> createState() => _NavBarState();
+}
 
-  List<PersistentBottomNavBarItem> _navBarItems() {
-    return [
-      PersistentBottomNavBarItem(
-        routeAndNavigatorSettings: RouteAndNavigatorSettings(
-            onGenerateRoute: AppRouter().generateRoute),
-        icon: const Icon(Icons.home),
-        activeColorPrimary: MyColors.pink,
-        inactiveColorPrimary: Colors.white,
-        title: 'Home',
-      ),
-      PersistentBottomNavBarItem(
-        routeAndNavigatorSettings: RouteAndNavigatorSettings(
-            onGenerateRoute: AppRouter().generateRoute),
-        icon: const Icon(Icons.favorite),
-        activeColorPrimary: MyColors.pink,
-        inactiveColorPrimary: Colors.white,
-        title: 'Favourites',
-      ),
-      PersistentBottomNavBarItem(
-        routeAndNavigatorSettings: RouteAndNavigatorSettings(
-            onGenerateRoute: AppRouter().generateRoute),
-        icon: const Icon(Icons.shopping_cart),
-        activeColorPrimary: MyColors.pink,
-        inactiveColorPrimary: Colors.white,
-        title: 'Cart',
-      )
-    ];
-  }
+class _NavBarState extends State<NavBar> {
+  int index = 0;
+  final List<Widget> _screens = [
+    HomeScreen(),
+    FavouriteScreen(),
+    CartScreen(),
+  ];
 
+  // List<Widget> _buildScreens() {
   @override
   Widget build(BuildContext context) {
-    return PersistentTabView(
-      context,
-      screens: _buildScreens(),
-      items: _navBarItems(),
-      backgroundColor: MyColors.navyBlue,
-      confineInSafeArea: true,
-      controller: PersistentTabController(initialIndex: 0),
-      hideNavigationBarWhenKeyboardShows: true,
-      navBarStyle: NavBarStyle.style11,
-      decoration: const NavBarDecoration(),
-      handleAndroidBackButtonPress: true,
-      // popAllScreensOnTapAnyTabs: true,
-      resizeToAvoidBottomInset: true,
-      stateManagement: true,
-      bottomScreenMargin: 60,
-      padding: const NavBarPadding.only(top: 10),
-      navBarHeight: 60,
+    return Scaffold(
+      body: _screens[index],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: index,
+        onTap: (index) {
+          setState(() {
+            this.index = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorite',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
+          ),
+        ],
+      ),
     );
+    //     context,
+    //     screens: _buildScreens(),
+    //     items: _navBarItems(),
+    //     backgroundColor: MyColors.navyBlue,
+    //     confineInSafeArea: true,
+    //     controller: PersistentTabController(initialIndex: 0),
+    //     hideNavigationBarWhenKeyboardShows: true,
+    //     navBarStyle: NavBarStyle.style11,
+    //     decoration: const NavBarDecoration(),
+    //     handleAndroidBackButtonPress: true,
+    //     // popAllScreensOnTapAnyTabs: true,
+    //     resizeToAvoidBottomInset: true,
+    //     stateManagement: true,
+    //     bottomScreenMargin: 60,
+    //     padding: const NavBarPadding.only(top: 10),
+    //     navBarHeight: 60,
+    //   );
+    // }
   }
 }

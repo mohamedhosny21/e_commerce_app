@@ -25,7 +25,7 @@ class AppConstants {
 }
 
 class ApiConstants {
-  static const String pizzaBaseUrl = 'http://192.168.1.8:3000';
+  static const String pizzaBaseUrl = 'http://192.168.1.6:3000';
 
   static const String pizzaEndPoint = '/allpizza';
 
@@ -33,4 +33,6 @@ class ApiConstants {
 
   static const String twitterApiKeySecret =
       'kqxG9elcTNpEy2qnBEvJFKOAfBKV41hmdionn2cJbQEPoreLJR';
+  static const String paymentTokenizationKey =
+      'sandbox_cs2hm3wc_74mb2kjwqq7mx628';
 }

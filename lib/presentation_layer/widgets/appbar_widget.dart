@@ -27,7 +27,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: MyTextStyles.font16NavyBlueRegular,
       ),
       elevation: elevation ?? 0.0,
-      backgroundColor: color ?? Colors.white,
+      backgroundColor: Colors.white,
       leading: leading ??
           IconButton(
               onPressed: onPressed,

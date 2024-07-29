@@ -62,7 +62,7 @@ class FavoritePizzaCubit extends Cubit<FavoritePizzaState> {
   Future<void> deleteFromFavoriteDatabase(int id, PizzaModel pizzaModel) async {
     final savedUserId = await getUserIdWithSharedPrefs();
 
-    database.rawDelete('DELETE FROM Favorites WHERE ID=? AND UserID?',
+    database.rawDelete('DELETE FROM Favorites WHERE ID=? AND UserID=?',
         [id, savedUserId]).then((value) {
       debugPrint(
           '${pizzaModel.pizzaName} is deleted successfully from favorite database');
