@@ -4,10 +4,15 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
 
 ## Features Key:
   Product Catalog: Implemented a detailed menu with high-quality images, descriptions, and prices for various pizza options, including customizable toppings and sizes.
+  
   Order Customization: Developed features allowing users to customize their pizzas with different toppings, crust types, and additional items.
+  
   RESTful API Integration: Integrated with third-party libraries (APIs) to make requests, enhancing the app's functionality.
+  
   User Authentication: Included user registration and login functionalities with Firebase Authentication to manage orders and save delivery addresses.
+  
   Bloc State Management: Utilized Bloc for efficient state management, ensuring smooth app performance.
+  
   Local Database: Saved required data locally using SQLite and Shared Preferences for improved performance and offline access.
 
 ## Getting Started
