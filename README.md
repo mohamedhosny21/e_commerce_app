@@ -35,7 +35,7 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
 
 ## Menu Screen
 
-<img src="https://github.com/mohamedhosny21/e_commerce_app/assets/96444914/fcbcfc6e-5d3c-4384-9b87-adbcaf6a6de9" width="300" />
+<img src="https://github.com/user-attachments/assets/3f79266a-fe6c-40a9-8c48-b25dd0cbbead" width="300" />
 
 ## Search in menu
 
