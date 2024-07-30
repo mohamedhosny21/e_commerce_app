@@ -1,6 +1,6 @@
 # home_slice
 
-A new Flutter project.
+Home Slice is a user-friendly e-commerce application dedicated to providing a seamless online pizza ordering experience. This app allows customers to browse through a variety of pizzas, customize their orders, all from the comfort of their mobile devices.
 
 ## Getting Started
 
