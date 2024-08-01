@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/presentation_layer/widgets/textformfield_widgets.dart';
+import 'package:home_slice/generated/l10n.dart';
 import '../../../business_logic_layer/cubit/authentication_cubit/cubit/authentication_cubit.dart';
 import '../../../constants/dimensions.dart';
+import '../../../widgets/textformfield_widgets.dart';
 import 'register_button.dart';
 
 class SignUpFormWidget extends StatefulWidget {
@@ -57,7 +58,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
           ConfirmPasswordTextFormField(passwordController: _passwordController),
           AppDimensions.verticalSpacing30,
           RegisterButton(
-            buttonText: 'Sign Up',
+            buttonText: S.of(context).Sign_Up,
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();

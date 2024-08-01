@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:home_slice/generated/l10n.dart';
 import 'package:home_slice/presentation_layer/register/widgets/divider.dart';
 import 'package:home_slice/presentation_layer/register/widgets/forgot_password_button.dart';
 
 import '../../../business_logic_layer/cubit/authentication_cubit/cubit/authentication_cubit.dart';
 import '../../../constants/dimensions.dart';
 import '../../../constants/styles.dart';
-import '../../widgets/textformfield_widgets.dart';
+import '../../../widgets/textformfield_widgets.dart';
 import 'register_button.dart';
 import 'social_register_button.dart';
 
@@ -68,14 +69,14 @@ class _SignInFormWidgetState extends State<SignInFormWidget> {
                         email: email, password: password);
               }
             },
-            buttonText: 'Login',
+            buttonText: S.of(context).Login,
           ),
           AppDimensions.verticalSpacing20,
           Row(
             children: [
               DividerWidget(margin: AppDimensions.marginStart20End10),
               Text(
-                'Or',
+                S.of(context).Or,
                 style: MyTextStyles.font18NavyBlueBold,
               ),
               DividerWidget(margin: AppDimensions.marginStart10End20),
@@ -84,7 +85,7 @@ class _SignInFormWidgetState extends State<SignInFormWidget> {
           AppDimensions.verticalSpacing15,
           SocialRegisterButton(
             iconColor: Colors.red,
-            buttonText: 'Sign In With Google',
+            buttonText: S.of(context).Sign_In_With_Google,
             buttonColor: Colors.white,
             buttonIcon: FontAwesomeIcons.googlePlusG,
             onPressed: () {
@@ -94,7 +95,7 @@ class _SignInFormWidgetState extends State<SignInFormWidget> {
           AppDimensions.verticalSpacing10,
           SocialRegisterButton(
             iconColor: const Color.fromARGB(255, 12, 46, 183),
-            buttonText: 'Sign In With Facebook',
+            buttonText: S.of(context).Sign_In_With_Facebook,
             buttonColor: Colors.white,
             buttonIcon: FontAwesomeIcons.facebook,
             onPressed: () {
@@ -105,7 +106,7 @@ class _SignInFormWidgetState extends State<SignInFormWidget> {
           AppDimensions.verticalSpacing10,
           SocialRegisterButton(
             iconColor: Colors.grey,
-            buttonText: 'Sign In With X ',
+            buttonText: S.of(context).Sign_In_With_X,
             buttonColor: Colors.white,
             buttonIcon: FontAwesomeIcons.xTwitter,
             onPressed: () {

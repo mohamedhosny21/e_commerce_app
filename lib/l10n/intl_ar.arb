@@ -1,0 +1,80 @@
+{
+    "home_title": "تناول بيتزا طازجة",
+    "home_subtitle":"بيتزا طازجة يومياً",
+    "Four_Cheese_Pizza": "بيتزا أربع أجبان"
+    ,"Pepperoni_Pizza": "بيتزا ببروني",
+    "BBQ_Chicken_Pizza": "بيتزا الدجاج المشوي",
+    "Hawaiian_Pizza": "بيتزا هاواي",
+    "Vegan_Pizza": "بيتزا نباتية"
+    ,"Margharita_Pizza": "بيتزا مارغريتا"
+    ,"ShowNow":"عرض الان",
+  "Pizza_Desc": "مجموعة من أفضل أنواع البيتزا طعماً والأكثر شعبية",
+  "Home":"الصفحة الرئيسية"
+  ,"Favorite":"المفضلة",
+  "Cart":"عربة التسوق",
+  "AddToCart":"اضافة للعربة",
+  "RemoveFromCart":"ازالة من العربة",
+  "DeliveryTime":"وقت التوصيل",
+  "fifteenMin":"15 دقيقة",
+  "small":"صغير",
+  "medium":"متوسط",
+  "large":"كبير"
+  ,"FavoritesPizza":"المفضلة",
+  "CartItems":"عناصر العربة",
+  "TotalItems":"عدد العناصر",
+  "PaymentDetails":"تفاصيل الدفع",
+  "Subtotal":"المجموع الفرعي",
+  "DeliveryFee":"رسوم التوصيل",
+  "TotalPrice":"المجموع الكلي",
+  "OrderNow":"اطلب الان",
+  "Help":"المساعدة",
+  "AboutUs":"عنا",
+  "Settings": "الاعدادات",
+  "Logout": "تسجيل الخروج",
+  "Language":"اللغة",
+  "English":"الانجليزية",
+  "Arabic":"العربية",
+  "ChooseLanguage":"اختر اللغة",
+  "must_be_at_least_8_characters":"على الاقل 8 حروف",
+  "Enter_Your_Email":"ادخل بريدك الالكتروني",
+  "Enter_Your_Password":"ادخل كلمة المرور",
+  "Confirm_Your_Password":"تاكيد كلمة المرور",
+  "Enter_Your_Email_To_Reset_Password":"ادخل بريدك الالكتروني لاعادة تعيين كلمة المرور",
+  "Forgot_Password":"هل نسيت كلمة المرور ؟",
+  "Email_has_been_sent_to":"تم ارسال بريدك الالكتروني",
+  "Check_your_inbox_to_verify_your_email":"تحقق من بريدك الالكتروني",
+  "Resend":"اعادة ارسال",
+  "Your_email_is_not_verified_yet" :"لم يتم التحقق من بريدك الالكتروني",
+  "Email_Verification":"تحقق من بريدك الالكتروني",
+  "Login":"تسجيل الدخول",
+  "Or":"او",
+  "Sign_In_With_Google":"تسجيل الدخول باستخدام جوجل",
+  "Sign_In_With_Facebook":"تسجيل الدخول باستخدام فيسبوك",
+  "Sign_In_With_X":"تسجيل الدخول باستخدام X",
+  "Sign_Up":"تسجيل",
+  "Enter_Your_Name":"ادخل اسمك",
+  "Password_not_match":"كلمة المرور غير متطابقة: ",
+  "Search_for_a_pizza":"ابحث عن بيتزا",
+  "Ooops_something_went_wrong":"حدث خطأ ما",
+  "required":"مطلوب*"
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

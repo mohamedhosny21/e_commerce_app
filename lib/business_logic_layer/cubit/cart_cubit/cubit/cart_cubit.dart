@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
-import 'package:home_slice/presentation_layer/widgets/shared_preferences.dart';
+import 'package:home_slice/helpers/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 
 // import 'package:path/path.dart';
@@ -48,7 +48,8 @@ class CartCubit extends Cubit<CartState> {
   }
 
   Future<void> insertIntoCartDatabase(PizzaModel pizzaModel) async {
-    final savedUserId = await getUserIdWithSharedPrefs();
+    final savedUserId =
+        await SharedPreferencesHelpers.getUserIdWithSharedPrefs();
     database
         .transaction((txn) => txn.rawInsert(
             'INSERT INTO Cart(ID,UserID,PizzaImage,PizzaName,OriginalPrice,SmallPizzaPrice,MediumPizzaPrice,LargePizzaPrice,MenuDescription,SmallPizzaQuantity,MediumPizzaQuantity,LargePizzaQuantity,PizzaSize,PizzaSizeIndex) VALUES(${pizzaModel.id},"$savedUserId", "${pizzaModel.image}", "${pizzaModel.pizzaName}",${pizzaModel.originalPrice},${pizzaModel.price?.smallPizzaPrice},${pizzaModel.price?.mediumPizzaPrice},${pizzaModel.price?.largePizzaPrice},"${pizzaModel.menuDescription}",${pizzaModel.pizzaQuantity?.smallPizzaQuantity},${pizzaModel.pizzaQuantity?.mediumPizzaQuantity},${pizzaModel.pizzaQuantity?.largePizzaQuantity},"${pizzaModel.pizzaSize}",${pizzaModel.pizzaSizeIndex})'))
@@ -65,7 +66,8 @@ class CartCubit extends Cubit<CartState> {
   }
 
   Future<void> deleteFromCartDatabase(PizzaModel pizzaModel) async {
-    final savedUserId = await getUserIdWithSharedPrefs();
+    final savedUserId =
+        await SharedPreferencesHelpers.getUserIdWithSharedPrefs();
 
     database.rawDelete(
         'DELETE FROM Cart WHERE ID=? AND PizzaSizeIndex=? AND UserID=?  ',
@@ -82,7 +84,8 @@ class CartCubit extends Cubit<CartState> {
   }
 
   Future<void> getFromCartDatabase(Database database) async {
-    final savedUserId = await getUserIdWithSharedPrefs();
+    final savedUserId =
+        await SharedPreferencesHelpers.getUserIdWithSharedPrefs();
     database.rawQuery('SELECT * FROM Cart WHERE UserID=?', [savedUserId]).then(
         (value) {
       debugPrint(value.toString());
@@ -114,7 +117,8 @@ class CartCubit extends Cubit<CartState> {
   }
 
   Future<void> updateToCartDatabase(PizzaModel pizzaModel) async {
-    final savedUserId = await getUserIdWithSharedPrefs();
+    final savedUserId =
+        await SharedPreferencesHelpers.getUserIdWithSharedPrefs();
 
     final isAddedToCart = cartPizzaItems
         .where((element) => element.pizzaSize == pizzaModel.pizzaSize)

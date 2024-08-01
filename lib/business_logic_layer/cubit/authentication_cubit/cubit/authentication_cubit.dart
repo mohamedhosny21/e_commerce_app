@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:home_slice/constants/strings.dart';
-import 'package:home_slice/presentation_layer/widgets/shared_preferences.dart';
+import 'package:home_slice/helpers/shared_preferences.dart';
 import 'package:twitter_login/twitter_login.dart';
 
 part 'authentication_state.dart';
@@ -56,7 +56,7 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       final userData = credential.user;
 
       final name = userData?.displayName;
-      saveUserDataWithSharedPreference(
+      SharedPreferencesHelpers.saveUserDataWithSharedPreference(
           userId: userData!.uid, userName: name ?? '', email: email);
       if (credential.user != null) {
         if (credential.user!.emailVerified) {
@@ -76,7 +76,7 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
 
   Future<void> signOut() async {
     //remove facebook access token from shared pref when signing out
-    removeFacebookAccessToken();
+    SharedPreferencesHelpers.removeFacebookAccessToken();
     await FirebaseAuth.instance.signOut();
     emit(SignOutState());
   }
@@ -125,7 +125,7 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       //initialize signing in process and triggers the authentication flow by opening the Google Sign-In dialog. it opens a dialog or a web page (depending on the platform) where the user can choose or enter their Google credentials to sign in.
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-      saveUserDataWithSharedPreference(
+      SharedPreferencesHelpers.saveUserDataWithSharedPreference(
           userId: googleUser!.id,
           userName: googleUser.displayName!,
           email: googleUser.email);
@@ -170,14 +170,15 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       final String? name = userData['name'];
       final String? email = userData['email'];
       // final profilePicture = userData['picture']['data']['url'];
-      saveUserDataWithSharedPreference(
+      SharedPreferencesHelpers.saveUserDataWithSharedPreference(
           userId: userId,
           userName: name!,
           email: email!,
           profilePicture: profilePictureUrl);
 
       emit(OnLoginSuccessState(successMsg: 'Login-Success'));
-      saveFacebookUserAuthState(accessToken: accessToken);
+      SharedPreferencesHelpers.saveFacebookUserAuthState(
+          accessToken: accessToken);
 
       // Once signed in, return the UserCredential
       return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
@@ -212,7 +213,7 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
 
         debugPrint('user name : $name');
 
-        saveUserDataWithSharedPreference(
+        SharedPreferencesHelpers.saveUserDataWithSharedPreference(
           userId: userData.uid,
           userName: name ?? '',
           profilePicture: profilePicture,

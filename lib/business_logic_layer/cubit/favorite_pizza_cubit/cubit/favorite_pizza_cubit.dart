@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 import 'package:sqflite/sqflite.dart';
 
-import '../../../../presentation_layer/widgets/shared_preferences.dart';
+import '../../../../helpers/shared_preferences.dart';
 part 'favorite_pizza_state.dart';
 
 class FavoritePizzaCubit extends Cubit<FavoritePizzaState> {
@@ -17,7 +17,7 @@ class FavoritePizzaCubit extends Cubit<FavoritePizzaState> {
 
   Future<void> createAndOpenFavoriteDatabase() async {
     openDatabase(
-      'favouritess.db',
+      'favouritesss.db',
       version: 1,
       onCreate: (db, version) {
         debugPrint('favorite Database is created');
@@ -43,7 +43,8 @@ class FavoritePizzaCubit extends Cubit<FavoritePizzaState> {
   }
 
   Future<void> insertIntoFavoriteDatabase(PizzaModel pizzaModel) async {
-    final savedUserId = await getUserIdWithSharedPrefs();
+    final savedUserId =
+        await SharedPreferencesHelpers.getUserIdWithSharedPrefs();
 
     database
         .rawInsert(
@@ -60,7 +61,8 @@ class FavoritePizzaCubit extends Cubit<FavoritePizzaState> {
   }
 
   Future<void> deleteFromFavoriteDatabase(int id, PizzaModel pizzaModel) async {
-    final savedUserId = await getUserIdWithSharedPrefs();
+    final savedUserId =
+        await SharedPreferencesHelpers.getUserIdWithSharedPrefs();
 
     database.rawDelete('DELETE FROM Favorites WHERE ID=? AND UserID=?',
         [id, savedUserId]).then((value) {
@@ -75,7 +77,8 @@ class FavoritePizzaCubit extends Cubit<FavoritePizzaState> {
   }
 
   Future<void> getFromFavoriteDatabase(Database database) async {
-    final savedUserId = await getUserIdWithSharedPrefs();
+    final savedUserId =
+        await SharedPreferencesHelpers.getUserIdWithSharedPrefs();
 
     database.rawQuery(
         'SELECT * FROM Favorites WHERE UserID=?', [savedUserId]).then((value) {

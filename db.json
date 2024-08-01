@@ -1,254 +1,244 @@
 {
-    "allpizza":[
+    "allpizza": [
         {
-           
-                    "id": 1,
-        "name": "Vegan Veggie",
-        "price": 8.60,
-        "menu_description": "Daiya vegan mozzarella, paired with fresh veggies",
-        "image":"https://i.ibb.co/59RCnNS/OIP-9.png",
-        "category":"Vegetarian Pizza"
-        
-
-                },
-                {
-                    "id": 2,
-                    "name": "Veggie Supreme",
-                    "price": 8.00,
-                    "menu_description": " combination of various vegetables such as bell peppers, onions, mushrooms, olives, tomatoes",
-                    "image":"https://t3.ftcdn.net/jpg/06/32/67/10/240_F_632671029_6O9QAth8xN31O5RFCzFndMuFoNHMUHSa.png",
-                    "category":"Vegetarian Pizza"
-                },
-               
-                {
-                    "id": 3,
-                    "name": "Mediterranean Pizza",
-                    "price": 10,
-                    "menu_description": "Topped with ingredients inspired by Mediterranean cuisine, such as sun-dried tomatoes, artichoke hearts, feta cheese, olives, and fresh herbs",
-                    "image":"https://t4.ftcdn.net/jpg/06/09/45/37/240_F_609453713_GfP4Au7w8uEnNPfxCZp0K7T0Z8WfFTIE.png",
-                    "category":"Vegetarian Pizza"
-                },
-                {
-                    "id": 4,
-                    "name": "Spinach and Feta Pizza",
-                    "price": 12.50,
-                    "menu_description": "combination of spinach leaves and crumbled feta cheese",
-                    "image":"https://t4.ftcdn.net/jpg/06/18/72/69/240_F_618726915_1YmfsGSNSzOoIq72g503LVSXjVTWI6q8.png",
-                    "category":"Vegetarian Pizza"
-                },
-              
-                {
-                    "id": 5,
-                    "name": "Mushroom and Truffle Oil Pizza",
-                    "price": 9.5,
-                    "menu_description": "A flavorful combination of sautéed mushrooms, truffle oil, mozzarella cheese",
-                    "image":"https://i.ibb.co/F67gFMx/t-1.png",
-                    "category":"Vegetarian Pizza"
-                },
-                {
-                    "id": 6,
-                    "name": "Vegetarian Hawaiian",
-                    "price": 14.00,
-                    "menu_description": "offers a meat-free twist. It typically includes pineapple, cheese, and sometimes additional toppings like bell peppers, onions, mushrooms, or olives.",
-                    "image":"https://i.ibb.co/q1jxMDk/Remove-background-project.png",
-                    "category":"Vegetarian Pizza"
-                }
-           ,
-                 {   "id": 7,
-                    "name": "Classic Pepperoni Pizza",
-                    "price": 8.00,
-                    "menu_description": "topped with tomato sauce, mozzarella cheese, and slices of pepperoni, a spicy Italian-American variety of salami",
-                    "image":"https://i.ibb.co/ySmRyXD/OIP-1.png",
-                    "category":"Pepperoni Pizza"
-                },
-                {
-                    "id": 8,
-                    "name": "Double Pepperoni Pizza",
-                    "price": 9.88,
-                    "menu_description": "loaded with twice the amount of pepperoni ",
-                    "image":"https://i.ibb.co/X7X3q5d/OIP-2.png",
-                    "category":"Pepperoni Pizza"
-                },
-                {
-                    "id": 9,
-                    "name": "Spicy Pepperoni Pizza",
-                    "price": 8.00,
-                    "menu_description": "pepperoni that includes additional spices or hot peppers to add an extra kick of heat to the classic combination",
-                    "image":"https://lirp-cdn.multiscreensite.com/e37b4879/dms3rep/multi/opt/Sammys_2_Top_BYO_Top-150w.png",
-                    "category":"Pepperoni Pizza"
-                },
-                {
-                    "id": 10,
-                    "name": "Pepperoni and Mushroom Pizza",
-                    "price": 10.00,
-                    "menu_description": "combination of pepperoni and mushrooms, offering a blend of meaty and earthy flavors",
-                    "image":"https://i.ibb.co/mH7jGY0/OIP-3.png",
-                    "category":"Pepperoni Pizza"
-                },
-                {
-                    "id": 11,
-                    "name": "Pepperoni and Sausage Pizza",
-                    "price": 15.00,
-                    "menu_description": "combines pepperoni with Italian sausage, providing a hearty and flavorful experience",
-                    "image":"https://i.ibb.co/PwnbBPs/OIP-4.png",
-                    "category":"Pepperoni Pizza"
-                },
-                {
-                    "id": 12,
-                    "name": "Pepperoni and Jalapeño Pizza",
-                    "price": 8.95,
-                    "menu_description": "pepperoni with slices of jalapeño peppers, creating a balance of heat and savory flavors",
-                    "image":"https://i.ibb.co/vZhsB8t/OIP-5.png",
-                    "category":"Pepperoni Pizza"
-                }
-             ,
-           
-                 {   "id": 13,
-                    "name": "Classic Margherita",
-                    "price":8.00,
-                    "menu_description": "combination of tomato sauce, slices of fresh mozzarella cheese, and fresh basil leaves",
-                    "image":"https://www.herbandfirepizzeria.com/uploads/1/1/7/8/117854757/pizza_2.png",
-                    "category":"Margherita Pizza"
-                },
-                {
-                    "id": 14,
-                    "name": "Neapolitan Margherita",
-                    "price": 12.95,
-                    "menu_description": "include San Marzano tomato sauce, buffalo mozzarella cheese, fresh basil leaves, extra virgin olive oil, and a sprinkle of salt",
-                    "image":"https://i.ibb.co/drSG1gw/OIP-10.png",
-                    "category":"Margherita Pizza"
-                },
-                {
-                    "id": 15,
-                    "name": "White Margherita",
-                    "price": 11.00,
-                    "menu_description": "replaces the traditional tomato sauce with a white sauce or olive oil base. It is topped with fresh mozzarella cheese, garlic, ricotta cheese, Parmesan cheese, and fresh basil",
-                    "image":"https://i.ibb.co/Wxt540W/240-F-126943919-Ntwmz-AXa-Z773andtt-GYLj-Wivp-R58q8-S4.png",
-                    "category":"Margherita Pizza"
-                },
-                {
-                    "id": 16,
-                    "name": "Bufalina Margherita",
-                    "price": 12.15,
-                    "menu_description": "buffalo mozzarella cheese,it is complemented by the usual tomato sauce, fresh basil, and olive oil",
-                    "image":"https://i.ibb.co/8MLKRzx/OIP-11.png",
-                    "category":"Margherita Pizza"
-                },
-                {
-                    "id": 17,
-                    "name": "Margherita al Pesto",
-                    "price": 11.00,
-                    "menu_description": "pesto sauce made from basil, pine nuts, Parmesan cheese, garlic, and olive oil",
-                    "image":"https://th.bing.com/th/id/R.de5412e679d5536955cad47c74daf77c?rik=z63QLyAzWB1gQw&pid&w=150&h=150.png",
-                    "category":"Margherita Pizza"
-                },
-                {
-                    "id": 18,
-                    "name": "Margherita Four Cheese",
-                    "price": 13.68,
-                    "menu_description": "combines the classic Margherita pizza with a luxurious cheese blend. It includes a base of tomato sauce, fresh basil leaves, and a combination of four cheeses such as mozzarella, Parmesan, fontina, and Gorgonzola.",
-                    "image":"https://i.ibb.co/sq2y3M6/0001111001719-1.png",
-                    "category":"Margherita Pizza"
-                },
-           
-                {
-                    "id": 19,
-                    "name": "Classic Hawaiian",
-                    "price": 15.00,
-                    "menu_description": "a base of tomato sauce and mozzarella cheese, topped with ham and pineapple chunks.The combination of sweet pineapple and savory ham creates a unique and contrasting flavor profile",
-                    "image":"https://i.ibb.co/r0TRpgd/OIP-8.png",
-                    "category":"Hawaiian Pizza"
-                },
-                {
-                    "id": 20,
-                    "name": "Teriyaki Chicken Hawaiian",
-                    "price": 18.00,
-                    "menu_description": "combines the Hawaiian pizza concept with the addition of teriyaki chicken. It includes grilled or shredded chicken marinated in teriyaki sauce, along with the traditional toppings of pineapple, ham, tomato sauce, and mozzarella cheese.",
-                    "image":"https://images.newyorkpizza.nl/Products/Original/Teriyaki-8044.png",
-                    "category":"Hawaiian Pizza"
-                },
-                {
-                    "id": 21,
-                    "name": "BBQ Hawaiian",
-                    "price": 16.80,
-                    "menu_description": "combines the flavors of Hawaiian pizza with barbecue sauce. It features a base of barbecue sauce instead of tomato sauce, topped with mozzarella cheese, ham, pineapple, and ingredients such as red onions or bacon.",
-                    "image":"https://i.ibb.co/kMMYhYV/OIP-7.png",
-                    "category":"Hawaiian Pizza"
-                },
-                {
-                    "id": 22,
-                    "name": "Spicy Hawaiian",
-                    "price": 15.00,
-                    "menu_description": "The spicy Hawaiian pizza adds a kick of heat to the traditional combination. It includes the usual ingredients of ham, pineapple, tomato sauce, and mozzarella cheese, but with the addition of spicy elements such as jalapeños or red pepper flakes.",
-                    "image":"https://i.ibb.co/QK2FnVg/volcano-min-1-300x300.png",
-                    "category":"Hawaiian Pizza"
-                },
-                {
-                    "id": 23,
-                    "name": "Vegetarian Hawaiian",
-                    "price": 16.00,
-                    "menu_description": "offers a meat-free twist. It typically includes pineapple, cheese, and sometimes additional toppings like bell peppers, onions, mushrooms, or olives.",
-                    "image":"https://i.ibb.co/q1jxMDk/Remove-background-project.png",
-                    "category":"Hawaiian Pizza"
-                }
-             ,
-                
-                
-                 {   "id": 24,
-                    "name": "Classic BBQ Chicken",
-                    "price": 15.70,
-                    "menu_description": "The classic BBQ chicken pizza features a base of tangy barbecue sauce instead of tomato sauce, topped with cooked chicken pieces, mozzarella cheese, red onions, and additional ingredients like cilantro or bell peppers.",
-                    "image":"https://i.ibb.co/mGsQPXJ/0001111001734-1.png",
-                    "category":"BBQ Chicken Pizza"
-                },
-                {
-                    "id": 25,
-                    "name": "Spicy BBQ Chicken",
-                    "price": 15.70,
-                    "menu_description": "The spicy BBQ chicken pizza adds an extra kick to the classic version by incorporating spicy elements",
-                    "image":"https://th.bing.com/th/id/R.6336368394edc2714b2c29aa0964a6a7?rik=t0xnnLCHBaixrA&pid=ImgRaw&r=0",
-                    "category":"BBQ Chicken Pizza"
-                },
-                {
-                    "id": 26,
-                    "name": "BBQ Hawaiian",
-                    "price": 16.80,
-                    "menu_description": "combines the flavors of Hawaiian pizza with barbecue sauce. It features a base of barbecue sauce instead of tomato sauce, topped with mozzarella cheese, ham, pineapple, and ingredients such as red onions or bacon.",
-                    "image":"https://i.ibb.co/kMMYhYV/OIP-7.png",
-                    "category":"BBQ Chicken Pizza"
-                },
-                {
-                    "id": 27,
-                    "name": "Ranch BBQ Chicken",
-                    "price": 18.00,
-                    "menu_description": "it incorporates ranch dressing along with the barbecue sauce, giving it a creamy and tangy element. It includes cooked chicken, barbecue sauce, ranch dressing, mozzarella cheese, and additional toppings like bacon or onions.",
-                    "image":"https://www.herbandfirepizzeria.com/uploads/1/1/7/8/117854757/bbq-chicken-transparent.png",
-                    "category":"BBQ Chicken Pizza"
-                },
-             
-                 {   "id": 28,
-                    "name": "Classic Four Cheese",
-                    "price": 10.00,
-                    "menu_description": "mouthwatering combination of four different types of cheeses. It typically includes a blend of mozzarella, romano, Parmesan, and oregano cheese.",
-                    "image":"https://www.herbandfirepizzeria.com/uploads/1/1/7/8/117854757/quatro_1.png",
-                    "category":"Four Cheese Pizza"
-                },
-                {
-                    "id": 29,
-                    "name": "Margherita Four Cheese",
-                    "price": 13.68,
-                    "menu_description": "combines the classic Margherita pizza with a luxurious cheese blend. It includes a base of tomato sauce, fresh basil leaves, a combination of four cheeses such as mozzarella, Parmesan, fontina, and Gorgonzola.",
-                    "image":"https://i.ibb.co/sq2y3M6/0001111001719-1.png",
-                    "category":"Four Cheese Pizza"
-                },
-                {
-                    "id": 30,
-                    "name": "Spinach and Four Cheese",
-                    "price": 14.00,
-                    "menu_description": "combines the creaminess of four cheeses with the freshness of spinach. It typically includes a blend of mozzarella, ricotta, Parmesan, and feta cheese, along with sautéed or fresh spinach leaves.",
-                    "image":"https://pizzamiamiami.com/wp-content/uploads/2020/07/four-cheese.png",
-                    "category":"Four Cheese Pizza"
-                }      
-          
+            "id": 1,
+            "name": "Vegan Veggie",
+            "price": 8.60,
+            "menu_description": "Description 1",
+            "image": "https://i.ibb.co/59RCnNS/OIP-9.png",
+            "category": "Vegetarian Pizza"
+        },
+        {
+            "id": 2,
+            "name": "Veggie Supreme",
+            "price": 8.00,
+            "menu_description": "Description 2",
+            "image": "https://t3.ftcdn.net/jpg/06/32/67/10/240_F_632671029_6O9QAth8xN31O5RFCzFndMuFoNHMUHSa.png",
+            "category": "Vegetarian Pizza"
+        },
+        {
+            "id": 3,
+            "name": "Mediterranean Pizza",
+            "price": 10,
+            "menu_description": "Description 3",
+            "image": "https://t4.ftcdn.net/jpg/06/09/45/37/240_F_609453713_GfP4Au7w8uEnNPfxCZp0K7T0Z8WfFTIE.png",
+            "category": "Vegetarian Pizza"
+        },
+        {
+            "id": 4,
+            "name": "Spinach and Feta Pizza",
+            "price": 12.50,
+            "menu_description": "Description 4",
+            "image": "https://t4.ftcdn.net/jpg/06/18/72/69/240_F_618726915_1YmfsGSNSzOoIq72g503LVSXjVTWI6q8.png",
+            "category": "Vegetarian Pizza"
+        },
+        {
+            "id": 5,
+            "name": "Mushroom and Truffle Oil Pizza",
+            "price": 9.5,
+            "menu_description": "Description 5",
+            "image": "https://i.ibb.co/F67gFMx/t-1.png",
+            "category": "Vegetarian Pizza"
+        },
+        {
+            "id": 6,
+            "name": "Vegetarian Hawaiian",
+            "price": 14.00,
+            "menu_description": "Description 6",
+            "image": "https://i.ibb.co/q1jxMDk/Remove-background-project.png",
+            "category": "Vegetarian Pizza"
+        },
+        {
+            "id": 7,
+            "name": "Classic Pepperoni Pizza",
+            "price": 8.00,
+            "menu_description": "Description 7",
+            "image": "https://i.ibb.co/ySmRyXD/OIP-1.png",
+            "category": "Pepperoni Pizza"
+        },
+        {
+            "id": 8,
+            "name": "Double Pepperoni Pizza",
+            "price": 9.88,
+            "menu_description": "Description 8",
+            "image": "https://i.ibb.co/X7X3q5d/OIP-2.png",
+            "category": "Pepperoni Pizza"
+        },
+        {
+            "id": 9,
+            "name": "Spicy Pepperoni Pizza",
+            "price": 8.00,
+            "menu_description": "Description 9",
+            "image": "https://lirp-cdn.multiscreensite.com/e37b4879/dms3rep/multi/opt/Sammys_2_Top_BYO_Top-150w.png",
+            "category": "Pepperoni Pizza"
+        },
+        {
+            "id": 10,
+            "name": "Pepperoni and Mushroom Pizza",
+            "price": 10.00,
+            "menu_description": "Description 10",
+            "image": "https://i.ibb.co/mH7jGY0/OIP-3.png",
+            "category": "Pepperoni Pizza"
+        },
+        {
+            "id": 11,
+            "name": "Pepperoni and Sausage Pizza",
+            "price": 15.00,
+            "menu_description": "Description 11",
+            "image": "https://i.ibb.co/PwnbBPs/OIP-4.png",
+            "category": "Pepperoni Pizza"
+        },
+        {
+            "id": 12,
+            "name": "Pepperoni and Jalapeño Pizza",
+            "price": 8.95,
+            "menu_description": "Description 12",
+            "image": "https://i.ibb.co/vZhsB8t/OIP-5.png",
+            "category": "Pepperoni Pizza"
+        },
+        {
+            "id": 13,
+            "name": "Classic Margherita",
+            "price": 8.00,
+            "menu_description": "Description 13",
+            "image": "https://www.herbandfirepizzeria.com/uploads/1/1/7/8/117854757/pizza_2.png",
+            "category": "Margherita Pizza"
+        },
+        {
+            "id": 14,
+            "name": "Neapolitan Margherita",
+            "price": 12.95,
+            "menu_description": "Description 14",
+            "image": "https://i.ibb.co/drSG1gw/OIP-10.png",
+            "category": "Margherita Pizza"
+        },
+        {
+            "id": 15,
+            "name": "White Margherita",
+            "price": 11.00,
+            "menu_description": "Description 15",
+            "image": "https://i.ibb.co/Wxt540W/240-F-126943919-Ntwmz-AXa-Z773andtt-GYLj-Wivp-R58q8-S4.png",
+            "category": "Margherita Pizza"
+        },
+        {
+            "id": 16,
+            "name": "Bufalina Margherita",
+            "price": 12.15,
+            "menu_description": "Description 16",
+            "image": "https://i.ibb.co/8MLKRzx/OIP-11.png",
+            "category": "Margherita Pizza"
+        },
+        {
+            "id": 17,
+            "name": "Margherita al Pesto",
+            "price": 11.00,
+            "menu_description": "Description 17",
+            "image": "https://th.bing.com/th/id/R.de5412e679d5536955cad47c74daf77c?rik=z63QLyAzWB1gQw&pid=w&h=150.png",
+            "category": "Margherita Pizza"
+        },
+        {
+            "id": 18,
+            "name": "Margherita Four Cheese",
+            "price": 13.68,
+            "menu_description": "Description 18",
+            "image": "https://i.ibb.co/sq2y3M6/0001111001719-1.png",
+            "category": "Margherita Pizza"
+        },
+        {
+            "id": 19,
+            "name": "Classic Hawaiian",
+            "price": 15.00,
+            "menu_description": "Description 19",
+            "image": "https://i.ibb.co/r0TRpgd/OIP-8.png",
+            "category": "Hawaiian Pizza"
+        },
+        {
+            "id": 20,
+            "name": "Teriyaki Chicken Hawaiian",
+            "price": 18.00,
+            "menu_description": "Description 20",
+            "image": "https://th.bing.com/th/id/OIP.qVFB04DzZC7UcLBDGqmxjAHaHb?w=172&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7",
+            "category": "Hawaiian Pizza"
+        },
+        {
+            "id": 21,
+            "name": "BBQ Hawaiian",
+            "price": 16.80,
+            "menu_description": "Description 21",
+            "image": "https://i.ibb.co/kMMYhYV/OIP-7.png",
+            "category": "Hawaiian Pizza"
+        },
+        {
+            "id": 22,
+            "name": "Spicy Hawaiian",
+            "price": 15.00,
+            "menu_description": "Description 22",
+            "image": "https://i.ibb.co/QK2FnVg/volcano-min-1-300x300.png",
+            "category": "Hawaiian Pizza"
+        },
+        {
+            "id": 23,
+            "name": "Vegetarian Hawaiian",
+            "price": 16.00,
+            "menu_description": "Description 23",
+            "image": "https://i.ibb.co/q1jxMDk/Remove-background-project.png",
+            "category": "Hawaiian Pizza"
+        },
+        {
+            "id": 24,
+            "name": "Classic BBQ Chicken",
+            "price": 15.70,
+            "menu_description": "Description 24",
+            "image": "https://i.ibb.co/mGsQPXJ/0001111001734-1.png",
+            "category": "BBQ Chicken Pizza"
+        },
+        {
+            "id": 25,
+            "name": "Spicy BBQ Chicken",
+            "price": 15.70,
+            "menu_description": "Description 25",
+            "image": "https://th.bing.com/th/id/R.6336368394edc2714b2c29aa0964a6a7?rik=t0xnnLCHBaixrA&pid=ImgRaw&r=0",
+            "category": "BBQ Chicken Pizza"
+        },
+        {
+            "id": 26,
+            "name": "BBQ Hawaiian",
+            "price": 16.80,
+            "menu_description": "Description 26",
+            "image": "https://i.ibb.co/kMMYhYV/OIP-7.png",
+            "category": "BBQ Chicken Pizza"
+        },
+        {
+            "id": 27,
+            "name": "Ranch BBQ Chicken",
+            "price": 18.00,
+            "menu_description": "Description 27",
+            "image": "https://www.herbandfirepizzeria.com/uploads/1/1/7/8/117854757/bbq-chicken-transparent.png",
+            "category": "BBQ Chicken Pizza"
+        },
+        {
+            "id": 28,
+            "name": "Classic Four Cheese",
+            "price": 10.00,
+            "menu_description": "Description 28",
+            "image": "https://www.herbandfirepizzeria.com/uploads/1/1/7/8/117854757/quatro_1.png",
+            "category": "Four Cheese Pizza"
+        },
+        {
+            "id": 29,
+            "name": "Margherita Four Cheese",
+            "price": 13.68,
+            "menu_description": "Description 29",
+            "image": "https://i.ibb.co/sq2y3M6/0001111001719-1.png",
+            "category": "Four Cheese Pizza"
+        },
+        {
+            "id": 30,
+            "name": "Spinach and Four Cheese",
+            "price": 14.00,
+            "menu_description": "Description 30",
+            "image": "https://pizzamiamiami.com/wp-content/uploads/2020/07/four-cheese.png",
+            "category": "Four Cheese Pizza"
+        }
     ]
 }

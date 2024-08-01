@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home_slice/generated/l10n.dart';
 
 import '../../../business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
 import '../../../constants/styles.dart';
@@ -13,7 +14,7 @@ class TotalPrice extends StatelessWidget {
       flex: 2,
       child: ListTile(
         title: Text(
-          'Total Price :',
+          '${S.of(context).TotalPrice} :',
           style: MyTextStyles.font18NavyBlueBold,
         ),
         trailing: BlocBuilder<CartCubit, CartState>(

@@ -5,15 +5,17 @@ import 'package:home_slice/constants/strings.dart';
 
 class PizzaWebServices {
   String? errorStatusMsg;
-  Future<List<dynamic>> getPizzaWebservices(String pizzaCategory) async {
+  Future<List<dynamic>> getPizzaWebservices(
+      String pizzaCategory, String lang) async {
     try {
+      print('category : $pizzaCategory');
       Response response =
           await DioConnections(baseUrl: ApiConstants.pizzaBaseUrl).dio.get(
               ApiConstants.pizzaEndPoint,
-              queryParameters: {'category': pizzaCategory});
+              queryParameters: {'category': pizzaCategory, 'lang': lang});
       debugPrint('Status Code : ${response.statusCode}');
-
-      return response.data;
+      List<dynamic> allPizza = response.data['allpizza'];
+      return allPizza;
     } on DioException catch (error) {
       errorStatusMsg = error.response?.statusMessage;
       debugPrint('Status Code : ${error.response?.statusCode}');

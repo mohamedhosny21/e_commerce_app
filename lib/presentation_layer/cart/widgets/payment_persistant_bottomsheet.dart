@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_slice/constants/dimensions.dart';
 import 'package:home_slice/constants/styles.dart';
+import 'package:home_slice/generated/l10n.dart';
 import 'package:home_slice/presentation_layer/cart/widgets/delivery_fee.dart';
 import 'package:home_slice/presentation_layer/cart/widgets/make_order_button.dart';
 import 'package:home_slice/presentation_layer/cart/widgets/subtotal.dart';
@@ -23,12 +24,12 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.vertical(top: Radius.circular(20.r))),
       padding: AppDimensions.paddingSymmetricH10V20,
-      height: 260.h,
+      height: 270.h,
       child: Column(
         children: [
           Center(
             child: Text(
-              'Payment Details',
+              S.of(context).PaymentDetails,
               style: MyTextStyles.font20NavyBlueBold,
             ),
           ),

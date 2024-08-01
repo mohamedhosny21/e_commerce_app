@@ -6,7 +6,7 @@ import '../../../business_logic_layer/cubit/pizza_order_cubit/cubit/pizza_order_
 import '../../../constants/dimensions.dart';
 import '../../../constants/styles.dart';
 import '../../../data_layer/models/pizza_model.dart';
-import '../../widgets/add_remove_containers_widget.dart';
+import '../../../widgets/add_remove_containers_widget.dart';
 
 class CartPizzaItemDetails extends StatelessWidget {
   final PizzaModel pizzaModel;

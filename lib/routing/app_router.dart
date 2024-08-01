@@ -13,10 +13,12 @@ import 'package:home_slice/presentation_layer/favorite/favourite_screen.dart';
 import 'package:home_slice/presentation_layer/orders/pizza_order_screen.dart';
 import 'package:home_slice/presentation_layer/menu/pizza_menu_screen.dart';
 import 'package:home_slice/presentation_layer/register/register_screen.dart';
-import 'package:home_slice/presentation_layer/widgets/navbar_widget.dart';
 import 'package:home_slice/routing/routes.dart';
 
 import '../business_logic_layer/cubit/pizza_api_cubit/pizza_cubit.dart';
+import '../presentation_layer/settings/language_screen.dart';
+import '../presentation_layer/settings/settings_screen.dart';
+import '../widgets/navbar_widget.dart';
 
 class AppRouter {
   late PizzaRepository pizzaRepository;
@@ -91,6 +93,14 @@ class AppRouter {
                     pizzaModel: pizzaModel,
                   ),
                 ));
+      case Routes.settingsScreen:
+        return MaterialPageRoute(
+          builder: (context) => const SettingsScreen(),
+        );
+      case Routes.languageScreen:
+        return MaterialPageRoute(
+          builder: (context) => const LanguageScreen(),
+        );
     }
     return null;
   }

@@ -3,12 +3,13 @@ import 'dart:async';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home_slice/generated/l10n.dart';
 
 import '../../../business_logic_layer/cubit/authentication_cubit/cubit/authentication_cubit.dart';
 import '../../../constants/styles.dart';
 import '../../../routing/routes.dart';
-import '../../widgets/circular_progress_indicator.dart';
-import '../../widgets/snackbar.dart';
+import '../../../helpers/circular_progress_indicator.dart';
+import '../../../helpers/snackbar.dart';
 
 typedef GetIndexAndSelectedToggleButton = Function(
     int index, List<bool> selectedToggleButton);
@@ -68,7 +69,7 @@ class _RegisterBlocListenerState extends State<RegisterBlocListener> {
                 });
               },
               desc:
-                  'Email has been sent to ${widget.email} Check your inbox to verify your email',
+                  '${S.of(context).Email_has_been_sent_to} ${widget.email} ${S.of(context).Check_your_inbox_to_verify_your_email}',
               dialogType: DialogType.info,
               btnOkOnPress: () {
                 index = 1;
@@ -91,10 +92,10 @@ class _RegisterBlocListenerState extends State<RegisterBlocListener> {
             if (state.errorMsg == 'Email-Not-Verified') {
               AwesomeDialog(
                 context: context,
-                btnOkText: 'Resend',
-                desc: 'Your email isn\'t verified yet !!',
+                btnOkText: S.of(context).Resend,
+                desc: S.of(context).Your_email_is_not_verified_yet,
                 dialogType: DialogType.warning,
-                title: 'Email Verification',
+                title: S.of(context).Email_Verification,
                 btnCancelOnPress: () {},
                 btnOkOnPress: () {
                   BlocProvider.of<AuthenticationCubit>(context)

@@ -43,13 +43,12 @@ dependencies:
   flutter_screenutil: ^5.9.0
   font_awesome_flutter: ^10.6.0
   google_sign_in: ^6.2.1
-  # persistent_bottom_nav_bar: ^5.0.2
   shared_preferences: ^2.2.2
   sqflite: ^2.3.0
   twitter_login: ^4.4.2
   flutter_localizations:
         sdk: flutter
-  flutter_braintree: ^3.0.0
+  # flutter_stripe: ^11.0.0
 
 dev_dependencies:
   flutter_lints: ^3.0.1

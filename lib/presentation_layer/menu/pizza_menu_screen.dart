@@ -4,13 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_slice/constants/styles.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 import 'package:home_slice/presentation_layer/menu/widgets/pizza_menu_items_listview.dart';
-import 'package:home_slice/presentation_layer/widgets/appbar_widget.dart';
-import 'package:home_slice/presentation_layer/widgets/drawer_widget.dart';
-import 'package:home_slice/presentation_layer/widgets/snackbar.dart';
-import 'package:home_slice/presentation_layer/widgets/textformfield_widgets.dart';
+import 'package:home_slice/widgets/drawer_widget.dart';
+import 'package:home_slice/helpers/snackbar.dart';
+import 'package:home_slice/generated/l10n.dart';
 
 import '../../business_logic_layer/cubit/pizza_api_cubit/pizza_cubit.dart';
 import '../../constants/colors.dart';
+import '../../widgets/appbar_widget.dart';
+import '../../widgets/textformfield_widgets.dart';
 
 class PizzaMenuScreen extends StatefulWidget {
   const PizzaMenuScreen({super.key, required this.category});
@@ -59,7 +60,7 @@ class _PizzaMenuScreenState extends State<PizzaMenuScreen> {
               },
               prefixIcon: Icons.search,
               hintStyle: MyTextStyles.font20GreyRegular,
-              hintText: 'Search for a pizza',
+              hintText: S.of(context).Search_for_a_pizza,
               keyboardType: TextInputType.name,
               onChanged: (searchedWord) {
                 setState(() {

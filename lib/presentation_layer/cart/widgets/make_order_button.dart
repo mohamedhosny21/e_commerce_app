@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_slice/generated/l10n.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/styles.dart';
@@ -16,7 +17,7 @@ class MakeOrderButton extends StatelessWidget {
       color: MyColors.navyBlue,
       minWidth: double.infinity,
       child: Text(
-        'Order Now',
+        S.of(context).OrderNow,
         style: MyTextStyles.font20WhiteBold,
       ),
     );

@@ -4,7 +4,7 @@ import 'package:home_slice/constants/styles.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 import 'package:home_slice/presentation_layer/menu/widgets/pizza_menu_item_image.dart';
 import 'package:home_slice/presentation_layer/menu/widgets/pizza_menu_item_name_with_desc.dart';
-import 'package:home_slice/presentation_layer/widgets/favorite_icon_container.dart';
+import 'package:home_slice/widgets/favorite_icon_container.dart';
 import 'package:home_slice/routing/routes.dart';
 
 import '../../../constants/dimensions.dart';

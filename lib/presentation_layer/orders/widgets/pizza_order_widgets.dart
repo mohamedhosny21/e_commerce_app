@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_slice/constants/dimensions.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
+import 'package:home_slice/generated/l10n.dart';
 import 'package:home_slice/presentation_layer/orders/widgets/pizza_size_container.dart';
 
 import '../../../business_logic_layer/cubit/pizza_order_cubit/cubit/pizza_order_cubit.dart';
@@ -32,11 +33,11 @@ class PizzaSizeContainers extends StatelessWidget {
             Expanded(
                 child: PizzaSizeContainer(
               color: pizzaSizeIndex == 1 ? MyColors.pink : Colors.white,
-              size: 'Small',
+              size: S.of(context).small,
               ontap: () {
                 if (pizzaSizeIndex != 1) {
                   pizzaSizeIndex = 1;
-                  pizzaSize = 'Small';
+                  pizzaSize = S.of(context).small;
                   getPizzaSize(pizzaSizeIndex, pizzaSize);
                 }
               },
@@ -45,11 +46,11 @@ class PizzaSizeContainers extends StatelessWidget {
             Expanded(
                 child: PizzaSizeContainer(
               color: pizzaSizeIndex == 2 ? MyColors.pink : Colors.white,
-              size: 'Medium',
+              size: S.of(context).medium,
               ontap: () {
                 if (pizzaSizeIndex != 2) {
                   pizzaSizeIndex = 2;
-                  pizzaSize = 'Medium';
+                  pizzaSize = S.of(context).medium;
                   getPizzaSize(pizzaSizeIndex, pizzaSize);
                 }
               },
@@ -58,11 +59,11 @@ class PizzaSizeContainers extends StatelessWidget {
             Expanded(
                 child: PizzaSizeContainer(
               color: pizzaSizeIndex == 3 ? MyColors.pink : Colors.white,
-              size: 'Large',
+              size: S.of(context).large,
               ontap: () {
                 if (pizzaSizeIndex != 3) {
                   pizzaSizeIndex = 3;
-                  pizzaSize = 'Large';
+                  pizzaSize = S.of(context).large;
                   getPizzaSize(pizzaSizeIndex, pizzaSize);
                 }
               },

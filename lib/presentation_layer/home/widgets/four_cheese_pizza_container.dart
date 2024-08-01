@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_slice/generated/l10n.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/strings.dart';
@@ -11,10 +12,8 @@ class FourCheesePizzaContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const PizzaTypesContainer(
-      buttonText: 'Show Now',
-      category: 'Four Cheese Pizza',
-      descText: 'A collection of best tasting pizza and most popular one',
+    return PizzaTypesContainer(
+      category: S.of(context).Four_Cheese_Pizza,
       image: AppConstants.fourCheesePizzaImage,
       color: MyColors.yellow,
     );

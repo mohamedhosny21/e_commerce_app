@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:home_slice/generated/l10n.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/strings.dart';
@@ -11,10 +12,8 @@ class VegetarianPizzaContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const PizzaTypesContainer(
-        buttonText: 'Show Now',
-        category: 'Vegetarian Pizza',
-        descText: 'A collection of best tasting pizza and most popular one',
+    return PizzaTypesContainer(
+        category: S.of(context).Vegan_Pizza,
         color: MyColors.lightGreen,
         image: AppConstants.vegetarianPizzaImage);
   }

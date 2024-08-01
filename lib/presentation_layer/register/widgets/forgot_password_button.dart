@@ -1,6 +1,7 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home_slice/generated/l10n.dart';
 import 'package:home_slice/presentation_layer/register/widgets/reset_password_form_field.dart';
 
 import '../../../business_logic_layer/cubit/authentication_cubit/cubit/authentication_cubit.dart';
@@ -26,7 +27,7 @@ class _ForgotPasswordButtonState extends State<ForgotPasswordButton> {
           body: Column(
             children: [
               Text(
-                'Enter Your Email To Reset Password',
+                S.of(context).Enter_Your_Email_To_Reset_Password,
                 style: MyTextStyles.font14BlackRegular,
               ),
               AppDimensions.verticalSpacing15,
@@ -49,7 +50,7 @@ class _ForgotPasswordButtonState extends State<ForgotPasswordButton> {
         ).show();
       },
       child: Text(
-        'Forgot Password ?',
+        S.of(context).Forgot_Password,
         style: MyTextStyles.font14NavyBlueRegular,
       ),
     );

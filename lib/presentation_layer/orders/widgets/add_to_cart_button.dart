@@ -6,6 +6,7 @@ import 'package:home_slice/business_logic_layer/cubit/pizza_order_cubit/cubit/pi
 import 'package:home_slice/constants/dimensions.dart';
 import 'package:home_slice/constants/styles.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
+import 'package:home_slice/generated/l10n.dart';
 
 import '../../../constants/colors.dart';
 
@@ -48,7 +49,9 @@ class AddToCartButton extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      isAddedToCart ? 'Remove From Cart' : 'Add To Cart',
+                      isAddedToCart
+                          ? S.of(context).RemoveFromCart
+                          : S.of(context).AddToCart,
                       style: MyTextStyles.font20WhiteBold,
                     ),
                     AppDimensions.horizontalSpacing10,

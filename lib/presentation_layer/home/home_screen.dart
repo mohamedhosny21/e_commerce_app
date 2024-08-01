@@ -6,12 +6,12 @@ import 'package:home_slice/presentation_layer/home/widgets/chef_container.dart';
 import 'package:home_slice/presentation_layer/home/widgets/hawaiian_pizza_container.dart';
 import 'package:home_slice/presentation_layer/home/widgets/home_titles.dart';
 import 'package:home_slice/presentation_layer/home/widgets/margherita_pizza_container.dart';
-import 'package:home_slice/presentation_layer/widgets/appbar_widget.dart';
 
-import 'package:home_slice/presentation_layer/widgets/drawer_widget.dart';
-import 'package:home_slice/presentation_layer/widgets/internet_connection_listener.dart';
+import 'package:home_slice/widgets/drawer_widget.dart';
+import 'package:home_slice/helpers/internet_connection_listener.dart';
 
 import '../../constants/dimensions.dart';
+import '../../widgets/appbar_widget.dart';
 import 'widgets/barbeque_pizza_container.dart';
 import 'widgets/four_cheese_pizza_container.dart';
 import 'widgets/pepperoni_pizza_container.dart';

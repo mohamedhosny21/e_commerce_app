@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/strings.dart';
+import '../../../generated/l10n.dart';
 import 'pizza_types_container_widget.dart';
 
 class MargheritaPizzaContainer extends StatelessWidget {
@@ -9,10 +10,8 @@ class MargheritaPizzaContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const PizzaTypesContainer(
-        buttonText: 'Show Now',
-        category: 'Margherita Pizza',
-        descText: 'A collection of best tasting pizza and most popular one',
+    return PizzaTypesContainer(
+        category: S.of(context).Margharita_Pizza,
         color: MyColors.lightGrayishBlue,
         image: AppConstants.margheritaPizzaImage);
   }
