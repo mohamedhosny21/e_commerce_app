@@ -19,16 +19,13 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
 
 ## Getting Started
 
-## Sign UP Screen
-
-<img src="https://github.com/user-attachments/assets/32a783f8-747b-42a5-9f96-56389ca274ae" width="300" />
-
-## Sign In Screen
-
-<img src="https://github.com/user-attachments/assets/f9e5a414-0096-46b1-94f2-df06c97521ed" width="300" />
+## Register Screen
 
 ### with different methods (Email & Password,Facebook,X,Google)
 ### with features like : Forgot Password and Email Verification
+
+<img src="https://github.com/user-attachments/assets/32a783f8-747b-42a5-9f96-56389ca274ae" width="300" />
+<img src="https://github.com/user-attachments/assets/f9e5a414-0096-46b1-94f2-df06c97521ed" width="300" />
 
 ## Home Screen
 
