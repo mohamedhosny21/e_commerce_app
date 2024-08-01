@@ -12,6 +12,8 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
   User Authentication: Included user registration and login functionalities with Firebase Authentication to manage orders and save delivery addresses.
   
   Bloc State Management: Utilized Bloc for efficient state management, ensuring smooth app performance.
+
+  Localization: Added support for multiple languages throughout the app.
   
   Local Database: Saved required data locally using SQLite and Shared Preferences for improved performance and offline access.
 
@@ -53,3 +55,11 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
 ## Cart Screen
 
 <img src="https://github.com/user-attachments/assets/3771d3f8-e054-40de-987d-d33e024fdf1d" width="300" />
+
+## Localization
+
+<img src="https://github.com/user-attachments/assets/cd9a8828-eb18-4c37-ae9d-57026c7f0b9f" width="300"/>
+<img src="https://github.com/user-attachments/assets/63a4c06d-786e-4180-87ca-2501aab8e617" width="300"/>
+<img src="https://github.com/user-attachments/assets/277e223d-585d-419c-83a9-bac15de44f77" width="300"/>
+<img src="https://github.com/user-attachments/assets/49708344-156c-4a41-b958-1f183c55d4a9" width="300"/>
+
