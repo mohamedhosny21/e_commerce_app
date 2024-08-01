@@ -86,7 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول باستخدام جوجل"),
         "Sign_In_With_X":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول باستخدام X"),
-        "Sign_Up": MessageLookupByLibrary.simpleMessage("تسجيل"),
+        "Sign_Up": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
         "Subtotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي"),
         "TotalItems": MessageLookupByLibrary.simpleMessage("عدد العناصر"),
         "TotalPrice": MessageLookupByLibrary.simpleMessage("المجموع الكلي"),

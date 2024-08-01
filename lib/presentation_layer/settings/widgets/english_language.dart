@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_slice/generated/l10n.dart';
-import 'package:home_slice/utils/utils.dart';
 
 import '../../../business_logic_layer/cubit/localization_cubit/localization_cubit.dart';
 import '../../../constants/colors.dart';
