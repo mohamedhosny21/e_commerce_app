@@ -26,15 +26,19 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
 
 <img src="https://github.com/user-attachments/assets/32a783f8-747b-42a5-9f96-56389ca274ae" width="300" />
 <img src="https://github.com/user-attachments/assets/f9e5a414-0096-46b1-94f2-df06c97521ed" width="300" />
+<img src="https://github.com/user-attachments/assets/cd9a8828-eb18-4c37-ae9d-57026c7f0b9f" width="300"/>
 
 ## Home Screen
 
 <img src="https://github.com/user-attachments/assets/ae4c6415-13aa-46e0-87f8-e104931bd0cb" width="300" />
 <img src="https://github.com/user-attachments/assets/633d8564-7b30-437b-98d1-76d17d633b93" width="300" />
+<img src="https://github.com/user-attachments/assets/277e223d-585d-419c-83a9-bac15de44f77" width="300"/>
+<img src="https://github.com/user-attachments/assets/63a4c06d-786e-4180-87ca-2501aab8e617" width="300"/>
 
 ## Menu Screen
 
 <img src="https://github.com/user-attachments/assets/3f79266a-fe6c-40a9-8c48-b25dd0cbbead" width="300" />
+<img src="https://github.com/user-attachments/assets/49708344-156c-4a41-b958-1f183c55d4a9" width="300"/>
 
 ## Search in menu
 
@@ -46,17 +50,11 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
 
 ## Order Screen
 
-<img src="https://github.com/user-attachments/assets/89f7a73e-2b60-4b84-9677-79f0d17220c6" width="300" />
-<img src="https://github.com/user-attachments/assets/5f21eb51-7714-4aaa-a2be-95da3f7c803b" width="300" />
+<img src="https://github.com/user-attachments/assets/d9be2b3c-fc5a-4113-9ec3-87bb223da582" width="300" />
+<img src="https://github.com/user-attachments/assets/8442b80c-ac9a-4072-a69c-4d96bf8392c1" width="300" />
+<img src="https://github.com/user-attachments/assets/592b42bb-7c3a-4703-abbc-ad36074ca031" width="300"/>
 
 ## Cart Screen
 
 <img src="https://github.com/user-attachments/assets/3771d3f8-e054-40de-987d-d33e024fdf1d" width="300" />
-
-## Localization
-
-<img src="https://github.com/user-attachments/assets/cd9a8828-eb18-4c37-ae9d-57026c7f0b9f" width="300"/>
-<img src="https://github.com/user-attachments/assets/277e223d-585d-419c-83a9-bac15de44f77" width="300"/>
-<img src="https://github.com/user-attachments/assets/63a4c06d-786e-4180-87ca-2501aab8e617" width="300"/>
-<img src="https://github.com/user-attachments/assets/49708344-156c-4a41-b958-1f183c55d4a9" width="300"/>
 
