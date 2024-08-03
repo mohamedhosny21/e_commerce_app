@@ -9,7 +9,7 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
   
   RESTful API Integration: Integrated with third-party libraries (APIs) to make requests, enhancing the app's functionality.
   
-  User Authentication: Included user registration and login functionalities with Firebase Authentication to manage orders and save delivery addresses.
+  User Authentication: Included user registration and login functionalities with Firebase Authentication to manage orders.
   
   Bloc State Management: Utilized Bloc for efficient state management, ensuring smooth app performance.
 
