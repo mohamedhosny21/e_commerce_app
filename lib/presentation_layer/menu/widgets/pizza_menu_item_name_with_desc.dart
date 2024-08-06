@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants/dimensions.dart';
-import '../../../constants/styles.dart';
+import '../../../core/constants/dimensions.dart';
+import '../../../core/constants/styles.dart';
 import '../../../data_layer/models/pizza_model.dart';
 
 class PizzaMenuItemNameWithDescription extends StatelessWidget {

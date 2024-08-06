@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants/colors.dart';
-import '../../../constants/styles.dart';
+import '../../../core/constants/colors.dart';
+import '../../../core/constants/styles.dart';
 
 class RegisterButton extends StatelessWidget {
   final String buttonText;

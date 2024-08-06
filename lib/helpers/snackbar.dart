@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_slice/constants/styles.dart';
+import '../core/constants/styles.dart';
 
 void showSnackBar(BuildContext context, String snackBarMsg,
     IconData snackbarIcon, Color snackBarColor, Color iconColor) {

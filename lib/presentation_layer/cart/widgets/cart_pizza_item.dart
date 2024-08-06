@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
-import '../../../constants/styles.dart';
+import '../../../business_logic_layer/cart_cubit/cubit/cart_cubit.dart';
+import '../../../core/constants/styles.dart';
 import '../../../data_layer/models/pizza_model.dart';
 
 class CartPizzaItem extends StatelessWidget {

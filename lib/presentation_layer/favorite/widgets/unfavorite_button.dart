@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/business_logic_layer/cubit/favorite_pizza_cubit/cubit/favorite_pizza_cubit.dart';
-import 'package:home_slice/data_layer/models/pizza_model.dart';
+import '../../../business_logic_layer/favorite_pizza_cubit/cubit/favorite_pizza_cubit.dart';
+import '../../../data_layer/models/pizza_model.dart';
 
-import '../../../constants/colors.dart';
+import '../../../core/constants/colors.dart';
 
 class UnfavoriteButton extends StatelessWidget {
   final PizzaModel favoriteItem;

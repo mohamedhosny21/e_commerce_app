@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/business_logic_layer/cubit/internet_cinnections_cubit/cubit/internet_connections_cubit.dart';
-import 'package:home_slice/constants/strings.dart';
-import 'package:home_slice/helpers/snackbar.dart';
+import '../business_logic_layer/internet_cinnections_cubit/cubit/internet_connections_cubit.dart';
+import '../core/constants/app_constants.dart';
+import 'snackbar.dart';
 
 // ignore: must_be_immutable
 class InternetConnectionBlocListener extends StatelessWidget {

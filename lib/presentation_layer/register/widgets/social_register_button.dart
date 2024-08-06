@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:home_slice/constants/styles.dart';
+import '../../../core/constants/styles.dart';
 
-import '../../../constants/dimensions.dart';
+import '../../../core/constants/dimensions.dart';
 
 class SocialRegisterButton extends StatelessWidget {
   final String buttonText;

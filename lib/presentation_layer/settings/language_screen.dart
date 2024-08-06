@@ -1,12 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/business_logic_layer/cubit/localization_cubit/localization_cubit.dart';
-import 'package:home_slice/constants/dimensions.dart';
-import 'package:home_slice/generated/l10n.dart';
-import 'package:home_slice/presentation_layer/settings/widgets/arabic_language.dart';
-import 'package:home_slice/presentation_layer/settings/widgets/english_language.dart';
-
-import '../../widgets/appbar_widget.dart';
+import '../../core/constants/dimensions.dart';
+import '../../core/widgets/appbar_widget.dart';
+import 'widgets/arabic_language.dart';
+import 'widgets/english_language.dart';
 
 class LanguageScreen extends StatefulWidget {
   const LanguageScreen({super.key});
@@ -18,12 +15,12 @@ class LanguageScreen extends StatefulWidget {
 class _LanguageScreenState extends State<LanguageScreen> {
   @override
   Widget build(BuildContext context) {
-    final locale = context.watch<LocaleCubit>().state;
-    String language = locale.languageCode == 'en' ? 'English' : 'Arabic';
+    String language =
+        context.locale.languageCode == 'en' ? 'English' : 'Arabic';
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: MyAppBar(
-          title: S.of(context).ChooseLanguage,
+          title: context.tr('ChooseLanguage'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -31,9 +28,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
             children: [
               GestureDetector(
                   onTap: () {
-                    context
-                        .read<LocaleCubit>()
-                        .changeAppLanguage(const Locale('en'));
+                    context.setLocale(const Locale('en'));
                   },
                   child: EnglishLanguage(
                     language: language,
@@ -41,9 +36,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
               AppDimensions.verticalSpacing10,
               GestureDetector(
                   onTap: () {
-                    context
-                        .read<LocaleCubit>()
-                        .changeAppLanguage(const Locale('ar'));
+                    context.setLocale(const Locale('ar'));
                   },
                   child: ArabicLanguage(
                     language: language,

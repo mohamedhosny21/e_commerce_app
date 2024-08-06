@@ -1,12 +1,12 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/generated/l10n.dart';
-import 'package:home_slice/presentation_layer/register/widgets/reset_password_form_field.dart';
+import '../../../business_logic_layer/authentication_cubit/auth_cubit.dart';
+import 'reset_password_form_field.dart';
 
-import '../../../business_logic_layer/cubit/authentication_cubit/cubit/authentication_cubit.dart';
-import '../../../constants/dimensions.dart';
-import '../../../constants/styles.dart';
+import '../../../core/constants/dimensions.dart';
+import '../../../core/constants/styles.dart';
 
 class ForgotPasswordButton extends StatefulWidget {
   const ForgotPasswordButton({super.key});
@@ -27,7 +27,7 @@ class _ForgotPasswordButtonState extends State<ForgotPasswordButton> {
           body: Column(
             children: [
               Text(
-                S.of(context).Enter_Your_Email_To_Reset_Password,
+                context.tr('Enter_Your_Email_To_Reset_Password'),
                 style: MyTextStyles.font14BlackRegular,
               ),
               AppDimensions.verticalSpacing15,
@@ -43,14 +43,14 @@ class _ForgotPasswordButtonState extends State<ForgotPasswordButton> {
           btnOkOnPress: () {
             if (ResetPasswordFormWidget.formKey.currentState!.validate()) {
               ResetPasswordFormWidget.formKey.currentState!.save();
-              BlocProvider.of<AuthenticationCubit>(context)
+              BlocProvider.of<AuthCubit>(context)
                   .resetPassword(resetPasswordEmail);
             }
           },
         ).show();
       },
       child: Text(
-        S.of(context).Forgot_Password,
+        context.tr('Forgot_Password'),
         style: MyTextStyles.font14NavyBlueRegular,
       ),
     );

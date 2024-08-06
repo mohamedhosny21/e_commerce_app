@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../constants/colors.dart';
-import '../../../constants/dimensions.dart';
-import '../../../constants/strings.dart';
+import '../../../core/constants/colors.dart';
+import '../../../core/constants/dimensions.dart';
+import '../../../core/constants/app_constants.dart';
 
 class ChefContainer extends StatelessWidget {
   const ChefContainer({super.key});

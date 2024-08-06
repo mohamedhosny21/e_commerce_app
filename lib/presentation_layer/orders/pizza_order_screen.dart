@@ -1,23 +1,22 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home_slice/business_logic_layer/cubit/localization_cubit/localization_cubit.dart';
-import 'package:home_slice/business_logic_layer/cubit/pizza_order_cubit/cubit/pizza_order_cubit.dart';
-import 'package:home_slice/constants/colors.dart';
-import 'package:home_slice/data_layer/models/pizza_model.dart';
-import 'package:home_slice/generated/l10n.dart';
-import 'package:home_slice/presentation_layer/orders/widgets/delivery_time_row.dart';
-import 'package:home_slice/presentation_layer/orders/widgets/pizza_order_item_desc.dart';
-import 'package:home_slice/presentation_layer/orders/widgets/pizza_order_item_image.dart';
-import 'package:home_slice/presentation_layer/orders/widgets/pizza_order_item_name.dart';
-import 'package:home_slice/presentation_layer/orders/widgets/pizza_order_item_price.dart';
-import 'package:home_slice/widgets/favorite_icon_container.dart';
-import 'package:home_slice/presentation_layer/orders/widgets/add_to_cart_button.dart';
-import '../../business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
-import '../../constants/dimensions.dart';
-import '../../widgets/add_remove_containers_widget.dart';
+import '../../core/constants/colors.dart';
+import '../../core/widgets/add_remove_containers_widget.dart';
+import '../../core/widgets/favorite_icon_container.dart';
+import '../../data_layer/models/pizza_model.dart';
+import 'widgets/delivery_time_row.dart';
+import 'widgets/pizza_order_item_desc.dart';
+import 'widgets/pizza_order_item_image.dart';
+import 'widgets/pizza_order_item_name.dart';
+import 'widgets/pizza_order_item_price.dart';
+import 'widgets/add_to_cart_button.dart';
+import '../../business_logic_layer/cart_cubit/cubit/cart_cubit.dart';
+import '../../business_logic_layer/pizza_order_cubit/cubit/pizza_order_cubit.dart';
+import '../../core/constants/dimensions.dart';
 import 'widgets/pizza_order_item_quantity.dart';
-import 'widgets/pizza_order_widgets.dart';
+import 'widgets/pizza_order_widget.dart';
 
 class PizzaOrderScreen extends StatefulWidget {
   final PizzaModel pizzaModel;
@@ -39,6 +38,13 @@ class _PizzaOrderScreenState extends State<PizzaOrderScreen> {
   void initState() {
     super.initState();
     initAsync();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    widget.pizzaModel.pizzaSize ??=
+        context.locale.languageCode == 'ar' ? 'متوسط' : 'Medium';
   }
 
   @override
@@ -118,7 +124,7 @@ class _PizzaOrderScreenState extends State<PizzaOrderScreen> {
                   ],
                 ),
               ),
-              context.read<LocaleCubit>().isArabic()
+              context.locale.languageCode == 'ar'
                   ? Positioned(
                       left: 0,
                       top: 20,
@@ -150,8 +156,7 @@ class _PizzaOrderScreenState extends State<PizzaOrderScreen> {
   Future<void> initAsync() async {
     pizzaOrderCubit = BlocProvider.of<PizzaOrderCubit>(context);
     cartCubit = BlocProvider.of<CartCubit>(context);
-    widget.pizzaModel.pizzaSize ??=
-        context.read<LocaleCubit>().isArabic() ? 'متوسط' : 'Medium';
+
     widget.pizzaModel.pizzaSizeIndex ??= 2;
 
     widget.pizzaModel.pizzaQuantity = PizzaQuantity(

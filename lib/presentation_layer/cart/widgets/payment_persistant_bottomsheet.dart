@@ -1,14 +1,14 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home_slice/constants/dimensions.dart';
-import 'package:home_slice/constants/styles.dart';
-import 'package:home_slice/generated/l10n.dart';
-import 'package:home_slice/presentation_layer/cart/widgets/delivery_fee.dart';
-import 'package:home_slice/presentation_layer/cart/widgets/make_order_button.dart';
-import 'package:home_slice/presentation_layer/cart/widgets/subtotal.dart';
-import 'package:home_slice/presentation_layer/cart/widgets/total_price.dart';
+import '../../../core/constants/dimensions.dart';
+import '../../../core/constants/styles.dart';
+import 'delivery_fee.dart';
+import 'make_order_button.dart';
+import 'subtotal.dart';
+import 'total_price.dart';
 
-import '../../../constants/colors.dart';
+import '../../../core/constants/colors.dart';
 import 'total_items.dart';
 
 class PaymentPersistantBottomSheet extends StatelessWidget {
@@ -29,7 +29,7 @@ class PaymentPersistantBottomSheet extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              S.of(context).PaymentDetails,
+              context.tr('PaymentDetails'),
               style: MyTextStyles.font20NavyBlueBold,
             ),
           ),

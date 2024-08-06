@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/presentation_layer/favorite/widgets/favorite_widget.dart';
+import '../../../core/routing/routes.dart';
+import 'favorite_widget.dart';
 
-import '../../../business_logic_layer/cubit/favorite_pizza_cubit/cubit/favorite_pizza_cubit.dart';
-import '../../../constants/dimensions.dart';
+import '../../../business_logic_layer/favorite_pizza_cubit/cubit/favorite_pizza_cubit.dart';
+import '../../../core/constants/dimensions.dart';
 import '../../../data_layer/models/pizza_model.dart';
-import '../../../routing/routes.dart';
 import 'favorite_pizza_image.dart';
 import 'favorite_pizza_name.dart';
 import 'unfavorite_button.dart';

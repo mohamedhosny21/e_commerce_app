@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_slice/constants/colors.dart';
+import '../core/constants/colors.dart';
 
 void showCircularProgressIndicator(BuildContext context) {
   AlertDialog alertDialog = const AlertDialog(

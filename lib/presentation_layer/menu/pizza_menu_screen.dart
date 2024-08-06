@@ -1,17 +1,16 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home_slice/constants/styles.dart';
-import 'package:home_slice/data_layer/models/pizza_model.dart';
-import 'package:home_slice/presentation_layer/menu/widgets/pizza_menu_items_listview.dart';
-import 'package:home_slice/widgets/drawer_widget.dart';
-import 'package:home_slice/helpers/snackbar.dart';
-import 'package:home_slice/generated/l10n.dart';
-
-import '../../business_logic_layer/cubit/pizza_api_cubit/pizza_cubit.dart';
-import '../../constants/colors.dart';
-import '../../widgets/appbar_widget.dart';
-import '../../widgets/textformfield_widgets.dart';
+import '../../core/constants/styles.dart';
+import '../../core/widgets/appbar_widget.dart';
+import '../../core/widgets/drawer_widget.dart';
+import '../../core/widgets/textformfield_widgets.dart';
+import '../../data_layer/models/pizza_model.dart';
+import 'widgets/pizza_menu_items_listview.dart';
+import '../../helpers/snackbar.dart';
+import '../../business_logic_layer/pizza_api_cubit/pizza_cubit.dart';
+import '../../core/constants/colors.dart';
 
 class PizzaMenuScreen extends StatefulWidget {
   const PizzaMenuScreen({super.key, required this.category});
@@ -28,9 +27,10 @@ class _PizzaMenuScreenState extends State<PizzaMenuScreen> {
   List<PizzaModel> searchedPizza = [];
 
   @override
-  void initState() {
-    super.initState();
-    BlocProvider.of<PizzaCubit>(context).getPizzaCubit(widget.category);
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    BlocProvider.of<PizzaCubit>(context).getPizzaCubit(
+        pizzaCategory: widget.category, lang: context.locale.toString());
   }
 
   @override
@@ -60,7 +60,7 @@ class _PizzaMenuScreenState extends State<PizzaMenuScreen> {
               },
               prefixIcon: Icons.search,
               hintStyle: MyTextStyles.font20GreyRegular,
-              hintText: S.of(context).Search_for_a_pizza,
+              hintText: context.tr('Search_for_a_pizza'),
               keyboardType: TextInputType.name,
               onChanged: (searchedWord) {
                 setState(() {
@@ -81,7 +81,7 @@ class _PizzaMenuScreenState extends State<PizzaMenuScreen> {
       listener: (context, state) {
         if (state is PizzaErrorState) {
           showErrorSnackBar(
-              context, state.errorMsg ?? 'Ooops,something-went-wrong');
+              context, state.errorMsg ?? 'Ooops_something_went_wrong'.tr());
         }
       },
       builder: (context, state) {

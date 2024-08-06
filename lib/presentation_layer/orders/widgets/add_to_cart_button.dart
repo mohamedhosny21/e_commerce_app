@@ -1,14 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home_slice/business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
-import 'package:home_slice/business_logic_layer/cubit/pizza_order_cubit/cubit/pizza_order_cubit.dart';
-import 'package:home_slice/constants/dimensions.dart';
-import 'package:home_slice/constants/styles.dart';
-import 'package:home_slice/data_layer/models/pizza_model.dart';
-import 'package:home_slice/generated/l10n.dart';
-
-import '../../../constants/colors.dart';
+import 'package:home_slice/business_logic_layer/cart_cubit/cubit/cart_cubit.dart';
+import '../../../business_logic_layer/pizza_order_cubit/cubit/pizza_order_cubit.dart';
+import '../../../core/constants/colors.dart';
+import '../../../core/constants/dimensions.dart';
+import '../../../core/constants/styles.dart';
+import '../../../data_layer/models/pizza_model.dart';
 
 class AddToCartButton extends StatelessWidget {
   final PizzaModel pizzaModel;
@@ -50,8 +49,8 @@ class AddToCartButton extends StatelessWidget {
                   children: [
                     Text(
                       isAddedToCart
-                          ? S.of(context).RemoveFromCart
-                          : S.of(context).AddToCart,
+                          ? context.tr('RemoveFromCart')
+                          : context.tr('AddToCart'),
                       style: MyTextStyles.font20WhiteBold,
                     ),
                     AppDimensions.horizontalSpacing10,

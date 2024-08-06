@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../constants/dimensions.dart';
-import '../../../constants/styles.dart';
+import '../../../core/constants/dimensions.dart';
+import '../../../core/constants/styles.dart';
 
 class PizzaSizeContainer extends StatelessWidget {
   final Color color;

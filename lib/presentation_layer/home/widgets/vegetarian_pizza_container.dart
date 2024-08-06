@@ -1,8 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:home_slice/generated/l10n.dart';
-
-import '../../../constants/colors.dart';
-import '../../../constants/strings.dart';
+import '../../../core/constants/colors.dart';
+import '../../../core/constants/app_constants.dart';
 import 'pizza_types_container_widget.dart';
 
 class VegetarianPizzaContainer extends StatelessWidget {
@@ -13,7 +12,7 @@ class VegetarianPizzaContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PizzaTypesContainer(
-        category: S.of(context).Vegan_Pizza,
+        category: context.tr('Vegan_Pizza'),
         color: MyColors.lightGreen,
         image: AppConstants.vegetarianPizzaImage);
   }

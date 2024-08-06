@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/business_logic_layer/cubit/authentication_cubit/cubit/authentication_cubit.dart';
+import '../../business_logic_layer/authentication_cubit/auth_cubit.dart';
 
-import 'package:home_slice/presentation_layer/home/widgets/chef_container.dart';
-import 'package:home_slice/presentation_layer/home/widgets/hawaiian_pizza_container.dart';
-import 'package:home_slice/presentation_layer/home/widgets/home_titles.dart';
-import 'package:home_slice/presentation_layer/home/widgets/margherita_pizza_container.dart';
+import '../../core/widgets/appbar_widget.dart';
+import '../../core/widgets/drawer_widget.dart';
 
-import 'package:home_slice/widgets/drawer_widget.dart';
-import 'package:home_slice/helpers/internet_connection_listener.dart';
+import 'widgets/chef_container.dart';
+import 'widgets/hawaiian_pizza_container.dart';
+import 'widgets/home_titles.dart';
+import 'widgets/margherita_pizza_container.dart';
 
-import '../../constants/dimensions.dart';
-import '../../widgets/appbar_widget.dart';
+import '../../helpers/internet_connection_listener.dart';
+
+import '../../core/constants/dimensions.dart';
 import 'widgets/barbeque_pizza_container.dart';
 import 'widgets/four_cheese_pizza_container.dart';
 import 'widgets/pepperoni_pizza_container.dart';
@@ -24,8 +25,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<AuthenticationCubit>.value(
-      value: AuthenticationCubit(),
+    return BlocProvider<AuthCubit>.value(
+      value: AuthCubit(),
       child: Scaffold(
         drawer: const MyDrawer(),
         key: _scaffoldKey,

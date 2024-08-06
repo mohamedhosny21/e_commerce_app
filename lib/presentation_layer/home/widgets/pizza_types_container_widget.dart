@@ -1,11 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home_slice/constants/dimensions.dart';
-import 'package:home_slice/constants/strings.dart';
-import 'package:home_slice/constants/styles.dart';
-import 'package:home_slice/routing/routes.dart';
-
-import '../../../generated/l10n.dart';
+import '../../../core/constants/dimensions.dart';
+import '../../../core/constants/app_constants.dart';
+import '../../../core/constants/styles.dart';
+import '../../../core/routing/routes.dart';
 
 class PizzaTypesContainer extends StatelessWidget {
   final Color color;
@@ -39,7 +38,7 @@ class PizzaTypesContainer extends StatelessWidget {
           ),
           AppDimensions.verticalSpacing10,
           Text(
-            S.of(context).Pizza_Desc,
+            context.tr('Pizza_Desc'),
             style: MyTextStyles.font16GreyBold,
             textAlign: TextAlign.center,
           ),
@@ -53,7 +52,7 @@ class PizzaTypesContainer extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.r)),
             child: Text(
-              S.of(context).ShowNow,
+              context.tr('ShowNow'),
               style: MyTextStyles.font14BlackBold,
             ),
           )

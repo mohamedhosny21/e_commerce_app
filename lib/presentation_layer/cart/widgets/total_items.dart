@@ -1,9 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/generated/l10n.dart';
-
-import '../../../business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
-import '../../../constants/styles.dart';
+import '../../../business_logic_layer/cart_cubit/cubit/cart_cubit.dart';
+import '../../../core/constants/styles.dart';
 
 class TotalItems extends StatelessWidget {
   const TotalItems({
@@ -15,7 +14,7 @@ class TotalItems extends StatelessWidget {
     return Expanded(
       child: ListTile(
         title: Text(
-          '${S.of(context).TotalItems} :',
+          '${context.tr('TotalItems')} :',
           style: MyTextStyles.font18NavyBlueBold,
         ),
         trailing: BlocBuilder<CartCubit, CartState>(

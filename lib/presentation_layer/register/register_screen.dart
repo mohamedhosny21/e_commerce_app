@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:home_slice/presentation_layer/register/widgets/register_listener_widget.dart';
-import 'package:home_slice/presentation_layer/register/widgets/signup_form_field.dart.dart';
-import 'package:home_slice/presentation_layer/register/widgets/signin_form_field.dart';
+import '../../core/widgets/toggle_button.dart';
+import 'widgets/register_listener_widget.dart';
+import 'widgets/signup_form_field.dart.dart';
+import 'widgets/signin_form_field.dart';
 
-import '../../constants/dimensions.dart';
-import '../../widgets/toggle_button.dart';
+import '../../core/constants/dimensions.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});

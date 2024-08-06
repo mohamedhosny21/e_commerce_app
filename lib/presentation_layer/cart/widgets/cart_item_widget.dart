@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
-import 'package:home_slice/constants/styles.dart';
-import 'package:home_slice/data_layer/models/pizza_model.dart';
-import 'package:home_slice/presentation_layer/cart/widgets/cart_pizza_item.dart';
-import 'package:home_slice/presentation_layer/cart/widgets/cart_pizza_item_details.dart';
+import '../../../business_logic_layer/cart_cubit/cubit/cart_cubit.dart';
+import '../../../core/constants/styles.dart';
+import '../../../data_layer/models/pizza_model.dart';
+import 'cart_pizza_item.dart';
+import 'cart_pizza_item_details.dart';
 
-import '../../../constants/dimensions.dart';
-import '../../../constants/strings.dart';
+import '../../../core/constants/dimensions.dart';
+import '../../../core/constants/app_constants.dart';
 
 class CartItem extends StatelessWidget {
   final BuildContext context;

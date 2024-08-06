@@ -1,14 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:home_slice/constants/dio_connection.dart';
-import 'package:home_slice/constants/strings.dart';
+import '../../core/constants/dio_connection.dart';
+
+import '../../core/constants/api_constants.dart';
 
 class PizzaWebServices {
   String? errorStatusMsg;
   Future<List<dynamic>> getPizzaWebservices(
       String pizzaCategory, String lang) async {
     try {
-      print('category : $pizzaCategory');
+      debugPrint('category : $pizzaCategory');
       Response response =
           await DioConnections(baseUrl: ApiConstants.pizzaBaseUrl).dio.get(
               ApiConstants.pizzaEndPoint,

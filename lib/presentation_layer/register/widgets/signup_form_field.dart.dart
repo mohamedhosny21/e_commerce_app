@@ -1,9 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/generated/l10n.dart';
-import '../../../business_logic_layer/cubit/authentication_cubit/cubit/authentication_cubit.dart';
-import '../../../constants/dimensions.dart';
-import '../../../widgets/textformfield_widgets.dart';
+import 'package:home_slice/business_logic_layer/payment_cubit/payment_cubit.dart';
+import '../../../business_logic_layer/authentication_cubit/auth_cubit.dart';
+import '../../../core/widgets/textformfield_widgets.dart';
+import '../../../core/constants/dimensions.dart';
 import 'register_button.dart';
 
 class SignUpFormWidget extends StatefulWidget {
@@ -58,12 +59,12 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
           ConfirmPasswordTextFormField(passwordController: _passwordController),
           AppDimensions.verticalSpacing30,
           RegisterButton(
-            buttonText: S.of(context).Sign_Up,
+            buttonText: context.tr('Sign_Up'),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
 
-                BlocProvider.of<AuthenticationCubit>(context).createUserAccount(
+                context.read<AuthCubit>().createUserAccount(
                     email: email, password: password, userName: userName);
               }
             },

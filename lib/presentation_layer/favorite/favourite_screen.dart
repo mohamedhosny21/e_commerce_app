@@ -1,14 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/business_logic_layer/cubit/authentication_cubit/cubit/authentication_cubit.dart';
-import 'package:home_slice/business_logic_layer/cubit/favorite_pizza_cubit/cubit/favorite_pizza_cubit.dart';
-import 'package:home_slice/data_layer/models/pizza_model.dart';
-import 'package:home_slice/generated/l10n.dart';
-import 'package:home_slice/presentation_layer/favorite/widgets/favorite_items_listview.dart';
-import 'package:home_slice/widgets/drawer_widget.dart';
-import 'package:home_slice/helpers/internet_connection_listener.dart';
-
-import '../../widgets/appbar_widget.dart';
+import '../../business_logic_layer/authentication_cubit/auth_cubit.dart';
+import '../../business_logic_layer/favorite_pizza_cubit/cubit/favorite_pizza_cubit.dart';
+import '../../core/widgets/appbar_widget.dart';
+import '../../core/widgets/drawer_widget.dart';
+import '../../data_layer/models/pizza_model.dart';
+import 'widgets/favorite_items_listview.dart';
+import '../../helpers/internet_connection_listener.dart';
 
 class FavouriteScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -19,8 +18,8 @@ class FavouriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<AuthenticationCubit>.value(
-          value: AuthenticationCubit(),
+        BlocProvider<AuthCubit>.value(
+          value: AuthCubit(),
         ),
         BlocProvider<FavoritePizzaCubit>(
             create: (context) => FavoritePizzaCubit()),
@@ -32,7 +31,7 @@ class FavouriteScreen extends StatelessWidget {
             key: _scaffoldKey,
             appBar: MyAppBar(
               elevation: 3.0,
-              title: S.of(context).FavoritesPizza,
+              title: context.tr('FavoritesPizza'),
               color: Colors.grey.shade100,
               onPressed: () {
                 _scaffoldKey.currentState?.openDrawer();

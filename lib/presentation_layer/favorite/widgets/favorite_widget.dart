@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:home_slice/business_logic_layer/cubit/favorite_pizza_cubit/cubit/favorite_pizza_cubit.dart';
-import 'package:home_slice/data_layer/models/pizza_model.dart';
+import '../../../business_logic_layer/favorite_pizza_cubit/cubit/favorite_pizza_cubit.dart';
+import '../../../data_layer/models/pizza_model.dart';
 
 class DismissibleWidget extends StatelessWidget {
   final PizzaModel favoriteItem;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:home_slice/data_layer/models/pizza_model.dart';
+import '../../../data_layer/models/pizza_model.dart';
 
-import '../../../constants/strings.dart';
+import '../../../core/constants/app_constants.dart';
 
 class FavoritePizzaImage extends StatelessWidget {
   final PizzaModel favoriteItem;

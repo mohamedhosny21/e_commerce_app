@@ -1,9 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/generated/l10n.dart';
-
-import '../../../business_logic_layer/cubit/cart_cubit/cubit/cart_cubit.dart';
-import '../../../constants/styles.dart';
+import '../../../business_logic_layer/cart_cubit/cubit/cart_cubit.dart';
+import '../../../core/constants/styles.dart';
 
 class DeliveryFee extends StatelessWidget {
   const DeliveryFee({
@@ -15,7 +14,7 @@ class DeliveryFee extends StatelessWidget {
     return Expanded(
       child: ListTile(
         title: Text(
-          '${S.of(context).DeliveryFee} :',
+          '${context.tr('DeliveryFee')} :',
           style: MyTextStyles.font18NavyBlueBold,
         ),
         trailing: BlocBuilder<CartCubit, CartState>(

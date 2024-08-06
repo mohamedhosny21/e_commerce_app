@@ -1,7 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
-import '../../../constants/styles.dart';
-import '../../../generated/l10n.dart';
+import '../../../core/constants/styles.dart';
 
 class HomeTitles extends StatelessWidget {
   const HomeTitles({super.key});
@@ -12,11 +11,11 @@ class HomeTitles extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          S.of(context).home_title,
+          context.tr('home_title'),
           style: MyTextStyles.font40NavyBlueBold,
         ),
         Text(
-          S.of(context).home_subtitle,
+          context.tr('home_subtitle'),
           style: MyTextStyles.font20GreyBold,
         ),
       ],

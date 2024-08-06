@@ -1,14 +1,14 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:home_slice/generated/l10n.dart';
-import 'package:home_slice/presentation_layer/register/widgets/divider.dart';
-import 'package:home_slice/presentation_layer/register/widgets/forgot_password_button.dart';
+import '../../../business_logic_layer/authentication_cubit/auth_cubit.dart';
+import '../../../core/widgets/textformfield_widgets.dart';
+import 'divider.dart';
+import 'forgot_password_button.dart';
 
-import '../../../business_logic_layer/cubit/authentication_cubit/cubit/authentication_cubit.dart';
-import '../../../constants/dimensions.dart';
-import '../../../constants/styles.dart';
-import '../../../widgets/textformfield_widgets.dart';
+import '../../../core/constants/dimensions.dart';
+import '../../../core/constants/styles.dart';
 import 'register_button.dart';
 import 'social_register_button.dart';
 
@@ -64,19 +64,18 @@ class _SignInFormWidgetState extends State<SignInFormWidget> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                BlocProvider.of<AuthenticationCubit>(context)
-                    .signInWithEmailAndPassword(
-                        email: email, password: password);
+                BlocProvider.of<AuthCubit>(context).signInWithEmailAndPassword(
+                    email: email, password: password);
               }
             },
-            buttonText: S.of(context).Login,
+            buttonText: context.tr('Login'),
           ),
           AppDimensions.verticalSpacing20,
           Row(
             children: [
               DividerWidget(margin: AppDimensions.marginStart20End10),
               Text(
-                S.of(context).Or,
+                context.tr('Or'),
                 style: MyTextStyles.font18NavyBlueBold,
               ),
               DividerWidget(margin: AppDimensions.marginStart10End20),
@@ -85,32 +84,31 @@ class _SignInFormWidgetState extends State<SignInFormWidget> {
           AppDimensions.verticalSpacing15,
           SocialRegisterButton(
             iconColor: Colors.red,
-            buttonText: S.of(context).Sign_In_With_Google,
+            buttonText: context.tr('Sign_In_With_Google'),
             buttonColor: Colors.white,
             buttonIcon: FontAwesomeIcons.googlePlusG,
             onPressed: () {
-              BlocProvider.of<AuthenticationCubit>(context).signInWithGoogle();
+              BlocProvider.of<AuthCubit>(context).signInWithGoogle();
             },
           ),
           AppDimensions.verticalSpacing10,
           SocialRegisterButton(
             iconColor: const Color.fromARGB(255, 12, 46, 183),
-            buttonText: S.of(context).Sign_In_With_Facebook,
+            buttonText: context.tr('Sign_In_With_Facebook'),
             buttonColor: Colors.white,
             buttonIcon: FontAwesomeIcons.facebook,
             onPressed: () {
-              BlocProvider.of<AuthenticationCubit>(context)
-                  .signInWithFacebook();
+              BlocProvider.of<AuthCubit>(context).signInWithFacebook();
             },
           ),
           AppDimensions.verticalSpacing10,
           SocialRegisterButton(
             iconColor: Colors.grey,
-            buttonText: S.of(context).Sign_In_With_X,
+            buttonText: context.tr('Sign_In_With_X'),
             buttonColor: Colors.white,
             buttonIcon: FontAwesomeIcons.xTwitter,
             onPressed: () {
-              BlocProvider.of<AuthenticationCubit>(context).signInWithTwitter();
+              BlocProvider.of<AuthCubit>(context).signInWithTwitter();
             },
           )
         ],

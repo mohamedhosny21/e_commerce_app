@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_slice/data_layer/models/pizza_model.dart';
 
-import '../../../constants/styles.dart';
+import '../../../core/constants/styles.dart';
 
 class PizzaOrderItemDesc extends StatelessWidget {
   final PizzaModel pizzaModel;

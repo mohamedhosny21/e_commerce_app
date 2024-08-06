@@ -1,8 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
-import '../../../constants/colors.dart';
-import '../../../constants/strings.dart';
-import '../../../generated/l10n.dart';
+import '../../../core/constants/colors.dart';
+import '../../../core/constants/app_constants.dart';
 import 'pizza_types_container_widget.dart';
 
 class HawaiianPizzaContainer extends StatelessWidget {
@@ -11,7 +10,7 @@ class HawaiianPizzaContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PizzaTypesContainer(
-        category: S.of(context).Hawaiian_Pizza,
+        category: context.tr('Hawaiian_Pizza'),
         color: MyColors.water,
         image: AppConstants.hawaiianPizzaImage);
   }

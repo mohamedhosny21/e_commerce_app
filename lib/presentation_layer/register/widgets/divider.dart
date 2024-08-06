@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants/colors.dart';
+import '../../../core/constants/colors.dart';
 
 class DividerWidget extends StatelessWidget {
   final EdgeInsetsGeometry margin;

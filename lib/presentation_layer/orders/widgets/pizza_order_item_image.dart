@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../constants/strings.dart';
+import '../../../core/constants/app_constants.dart';
 import '../../../data_layer/models/pizza_model.dart';
 
 class PizzaOrderItemImage extends StatelessWidget {

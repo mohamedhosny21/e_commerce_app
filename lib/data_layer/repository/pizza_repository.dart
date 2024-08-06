@@ -1,23 +1,22 @@
-import 'package:home_slice/data_layer/models/pizza_model.dart';
-import 'package:home_slice/data_layer/webservices/pizza_webservices.dart';
+import 'package:flutter/material.dart';
 
-import '../../helpers/shared_preferences.dart';
+import '../models/pizza_model.dart';
+import '../webservices/pizza_webservices.dart';
 
 class PizzaRepository {
   final PizzaWebServices pizzaWebServices;
   String? errorStatusMsg;
   PizzaRepository(this.pizzaWebServices);
-  Future<List<PizzaModel>> getPizzaRepo(String pizzaCategory) async {
+  Future<List<PizzaModel>> getPizzaRepo(
+      {required String pizzaCategory, required String lang}) async {
     try {
-      final String lang =
-          await SharedPreferencesHelpers.getAppLanguage() ?? 'en';
       final allPizza =
           await pizzaWebServices.getPizzaWebservices(pizzaCategory, lang);
-      print('aaaaaaaaa : $allPizza');
+      debugPrint('all Pizza : $allPizza');
       return allPizza.map((pizza) => PizzaModel.fromJson(pizza)).toList();
     } catch (error) {
       errorStatusMsg = pizzaWebServices.errorStatusMsg;
-      print('error : $error');
+      debugPrint('error : $error');
       throw Exception(error);
     }
   }
