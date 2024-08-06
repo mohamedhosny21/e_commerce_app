@@ -23,8 +23,8 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
 
 ## Register Screen
 
-### with different methods (Email & Password,Facebook,X,Google)
-### with features like : Forgot Password and Email Verification
+### with different methods (Email & Password,Facebook,X,Google).
+### with features like : Forgot Password and Email Verification.
 
 <img src="https://github.com/user-attachments/assets/32a783f8-747b-42a5-9f96-56389ca274ae" width="300" />
 <img src="https://github.com/user-attachments/assets/f9e5a414-0096-46b1-94f2-df06c97521ed" width="300" />
@@ -62,9 +62,9 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
 
 ## Payment
 
-### you can add new card data OR choose from recently cards
-### Payment with card with the ability to save card data for future use
+### you can add new card data OR choose from recently cards.
+### Payment with card with the ability to save card data for future use.
 
-<img src="saved paymnet methods](https://github.com/user-attachments/assets/0654059f-4427-4bf0-8ed3-e017d8b1a9dd" width="300" />
+<img src="https://github.com/user-attachments/assets/0654059f-4427-4bf0-8ed3-e017d8b1a9dd" width="300" />
 <img src="https://github.com/user-attachments/assets/8fe4105c-7d6b-43c7-b131-636914115a04" width="300" />
 
