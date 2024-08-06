@@ -1,6 +1,6 @@
 # home_slice
 
-Home Slice is a user-friendly e-commerce application dedicated to providing a seamless online pizza ordering experience. This app allows customers to browse through a variety of pizzas, customize their orders, all from the comfort of their mobile devices.
+Home Slice is a user-friendly e-commerce application dedicated to providing a seamless online pizza ordering experience. This app allows customers to browse through a variety of pizzas, customize their orders, and make secure payments, all from the comfort of their mobile devices.
 
 ## Features Key:
   Product Catalog: Implemented a detailed menu with high-quality images, descriptions, and prices for various pizza options, including customizable toppings and sizes.
@@ -8,8 +8,10 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
   Order Customization: Developed features allowing users to customize their pizzas with different toppings, crust types, and additional items.
   
   RESTful API Integration: Integrated with third-party libraries (APIs) to make requests, enhancing the app's functionality.
+
+  Payment Gateway Integration: using Stripe payment gateway to enable secure and efficient payment processing, enhancing the overall user experience by allowing customers to complete their purchases seamlessly. 
   
-  User Authentication: Included user registration and login functionalities with Firebase Authentication to manage orders and save delivery addresses.
+  User Authentication: Included user registration and login functionalities with Firebase Authentication to manage orders.
   
   Bloc State Management: Utilized Bloc for efficient state management, ensuring smooth app performance.
 
@@ -21,8 +23,8 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
 
 ## Register Screen
 
-### with different methods (Email & Password,Facebook,X,Google)
-### with features like : Forgot Password and Email Verification
+### with different methods (Email & Password,Facebook,X,Google).
+### with features like : Forgot Password and Email Verification.
 
 <img src="https://github.com/user-attachments/assets/32a783f8-747b-42a5-9f96-56389ca274ae" width="300" />
 <img src="https://github.com/user-attachments/assets/f9e5a414-0096-46b1-94f2-df06c97521ed" width="300" />
@@ -57,4 +59,12 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
 ## Cart Screen
 
 <img src="https://github.com/user-attachments/assets/3771d3f8-e054-40de-987d-d33e024fdf1d" width="300" />
+
+## Payment
+
+### you can add new card data OR choose from recently cards.
+### Payment with card with the ability to save card data for future use.
+
+<img src="https://github.com/user-attachments/assets/0654059f-4427-4bf0-8ed3-e017d8b1a9dd" width="300" />
+<img src="https://github.com/user-attachments/assets/8fe4105c-7d6b-43c7-b131-636914115a04" width="300" />
 
