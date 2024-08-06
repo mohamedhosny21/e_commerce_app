@@ -1,6 +1,6 @@
 # home_slice
 
-Home Slice is a user-friendly e-commerce application dedicated to providing a seamless online pizza ordering experience. This app allows customers to browse through a variety of pizzas, customize their orders, all from the comfort of their mobile devices.
+Home Slice is a user-friendly e-commerce application dedicated to providing a seamless online pizza ordering experience. This app allows customers to browse through a variety of pizzas, customize their orders, and make secure payments, all from the comfort of their mobile devices.
 
 ## Features Key:
   Product Catalog: Implemented a detailed menu with high-quality images, descriptions, and prices for various pizza options, including customizable toppings and sizes.
@@ -8,6 +8,8 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
   Order Customization: Developed features allowing users to customize their pizzas with different toppings, crust types, and additional items.
   
   RESTful API Integration: Integrated with third-party libraries (APIs) to make requests, enhancing the app's functionality.
+
+  Payment Gateway Integration: using Stripe payment gateway to enable secure and efficient payment processing, enhancing the overall user experience by allowing customers to complete their purchases seamlessly. 
   
   User Authentication: Included user registration and login functionalities with Firebase Authentication to manage orders.
   
