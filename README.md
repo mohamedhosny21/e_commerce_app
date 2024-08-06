@@ -60,3 +60,11 @@ Home Slice is a user-friendly e-commerce application dedicated to providing a se
 
 <img src="https://github.com/user-attachments/assets/3771d3f8-e054-40de-987d-d33e024fdf1d" width="300" />
 
+## Payment
+
+### you can add new card data OR choose from recently cards
+###Payment with card with the ability to save card data for future use
+
+<img src="saved paymnet methods](https://github.com/user-attachments/assets/0654059f-4427-4bf0-8ed3-e017d8b1a9dd" width="300" />
+<img src="https://github.com/user-attachments/assets/8fe4105c-7d6b-43c7-b131-636914115a04" width="300" />
+
