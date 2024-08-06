@@ -3,9 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:home_slice/core/dependecy_injection/dependency_injection.dart';
+import 'package:home_slice/home_slice.dart';
 import 'core/constants/api_constants.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
@@ -36,30 +36,7 @@ void main() async {
       path: 'assets/lang',
       fallbackLocale: const Locale('en'),
       child: HomeSlice(
+        initialRoute: initialRoute,
         appRouter: AppRouter(),
       )));
-}
-
-class HomeSlice extends StatelessWidget {
-  final AppRouter appRouter;
-  const HomeSlice({super.key, required this.appRouter});
-
-  @override
-  Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      builder: (context, child) => MaterialApp(
-        locale: context.locale,
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        debugShowCheckedModeBanner: false,
-        title: 'Home Slice',
-        initialRoute: initialRoute,
-        onGenerateRoute: appRouter.generateRoute,
-      ),
-      splitScreenMode: true,
-      ensureScreenSize: true,
-    );
-  }
 }
