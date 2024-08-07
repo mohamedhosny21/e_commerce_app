@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../business_logic_layer/authentication_cubit/auth_cubit.dart';
-import '../../../core/widgets/textformfield_widgets.dart';
 import 'divider.dart';
+import 'email_text_form_field.dart';
 import 'forgot_password_button.dart';
 
 import '../../../core/constants/dimensions.dart';
 import '../../../core/constants/styles.dart';
+import 'password_text_form_field.dart';
 import 'register_button.dart';
 import 'social_register_button.dart';
 

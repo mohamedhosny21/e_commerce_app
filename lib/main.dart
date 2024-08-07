@@ -12,7 +12,7 @@ import 'core/routing/routes.dart';
 import 'helpers/shared_preferences.dart';
 import 'firebase_options.dart';
 
-late String initialRoute;
+String initialRoute = '';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();

@@ -51,6 +51,7 @@ dependencies:
   get_it: ^7.7.0
   easy_localization: ^3.0.7
   cloud_firestore: ^4.14.0
+  flutter_paypal_payment: ^1.0.6
 
 dev_dependencies:
   flutter_lints: ^3.0.1

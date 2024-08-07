@@ -1,11 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_slice/business_logic_layer/payment_cubit/payment_cubit.dart';
 import '../../../business_logic_layer/authentication_cubit/auth_cubit.dart';
-import '../../../core/widgets/textformfield_widgets.dart';
 import '../../../core/constants/dimensions.dart';
+import 'confirm_password_text_form_field.dart';
+import 'email_text_form_field.dart';
+import 'password_text_form_field.dart';
 import 'register_button.dart';
+import 'username_text_form_field.dart';
 
 class SignUpFormWidget extends StatefulWidget {
   final GetEmail getEmail;

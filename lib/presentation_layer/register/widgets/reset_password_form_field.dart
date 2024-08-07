@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../core/widgets/textformfield_widgets.dart';
+import 'email_text_form_field.dart';
 
 typedef GetEmail = Function(String email);
 

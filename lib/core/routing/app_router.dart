@@ -35,7 +35,7 @@ class AppRouter {
             builder: (context) => MultiBlocProvider(
                   providers: [
                     BlocProvider<AuthCubit>(
-                      create: (context) => AuthCubit(),
+                      create: (context) => getIt<AuthCubit>(),
                     ),
                     BlocProvider<PaymentCubit>(
                       create: (context) => getIt<PaymentCubit>(),
@@ -53,7 +53,7 @@ class AppRouter {
                 create: (context) => getIt<PizzaCubit>(),
               ),
               BlocProvider<AuthCubit>.value(
-                value: AuthCubit(),
+                value: getIt<AuthCubit>(),
               ),
               BlocProvider<FavoritePizzaCubit>.value(
                   value: FavoritePizzaCubit()),

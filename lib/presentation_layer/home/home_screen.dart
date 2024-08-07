@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home_slice/core/dependecy_injection/dependency_injection.dart';
 import '../../business_logic_layer/authentication_cubit/auth_cubit.dart';
 
 import '../../core/widgets/appbar_widget.dart';
@@ -26,7 +27,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<AuthCubit>.value(
-      value: AuthCubit(),
+      value: getIt<AuthCubit>(),
       child: Scaffold(
         drawer: const MyDrawer(),
         key: _scaffoldKey,

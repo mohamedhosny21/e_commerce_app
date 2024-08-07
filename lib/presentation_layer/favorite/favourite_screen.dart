@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home_slice/core/dependecy_injection/dependency_injection.dart';
 import '../../business_logic_layer/authentication_cubit/auth_cubit.dart';
 import '../../business_logic_layer/favorite_pizza_cubit/cubit/favorite_pizza_cubit.dart';
 import '../../core/widgets/appbar_widget.dart';
@@ -19,7 +20,7 @@ class FavouriteScreen extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthCubit>.value(
-          value: AuthCubit(),
+          value: getIt<AuthCubit>(),
         ),
         BlocProvider<FavoritePizzaCubit>(
             create: (context) => FavoritePizzaCubit()),

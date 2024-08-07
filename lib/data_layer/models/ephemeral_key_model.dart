@@ -1,4 +1,3 @@
-
 class EphemeralKeyModel {
   String? id;
   String? object;
@@ -8,44 +7,56 @@ class EphemeralKeyModel {
   bool? livemode;
   String? secret;
 
-  EphemeralKeyModel({this.id, this.object, this.associatedObjects, this.created, this.expires, this.livemode, this.secret});
+  EphemeralKeyModel(
+      {this.id,
+      this.object,
+      this.associatedObjects,
+      this.created,
+      this.expires,
+      this.livemode,
+      this.secret});
 
   EphemeralKeyModel.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["object"] is String) {
+    if (json["object"] is String) {
       object = json["object"];
     }
-    if(json["associated_objects"] is List) {
-      associatedObjects = json["associated_objects"] == null ? null : (json["associated_objects"] as List).map((e) => AssociatedObjects.fromJson(e)).toList();
+    if (json["associated_objects"] is List) {
+      associatedObjects = json["associated_objects"] == null
+          ? null
+          : (json["associated_objects"] as List)
+              .map((e) => AssociatedObjects.fromJson(e))
+              .toList();
     }
-    if(json["created"] is int) {
+    if (json["created"] is int) {
       created = json["created"];
     }
-    if(json["expires"] is int) {
+    if (json["expires"] is int) {
       expires = json["expires"];
     }
-    if(json["livemode"] is bool) {
+    if (json["livemode"] is bool) {
       livemode = json["livemode"];
     }
-    if(json["secret"] is String) {
+    if (json["secret"] is String) {
       secret = json["secret"];
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> _data = <String, dynamic>{};
-    _data["id"] = id;
-    _data["object"] = object;
-    if(associatedObjects != null) {
-      _data["associated_objects"] = associatedObjects?.map((e) => e.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["id"] = id;
+    data["object"] = object;
+    if (associatedObjects != null) {
+      data["associated_objects"] =
+          associatedObjects?.map((e) => e.toJson()).toList();
     }
-    _data["created"] = created;
-    _data["expires"] = expires;
-    _data["livemode"] = livemode;
-    _data["secret"] = secret;
-    return _data;
+    data["created"] = created;
+    data["expires"] = expires;
+    data["livemode"] = livemode;
+    data["secret"] = secret;
+    return data;
   }
 }
 
@@ -56,18 +67,18 @@ class AssociatedObjects {
   AssociatedObjects({this.id, this.type});
 
   AssociatedObjects.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["type"] is String) {
+    if (json["type"] is String) {
       type = json["type"];
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> _data = <String, dynamic>{};
-    _data["id"] = id;
-    _data["type"] = type;
-    return _data;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["id"] = id;
+    data["type"] = type;
+    return data;
   }
 }

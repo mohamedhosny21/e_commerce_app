@@ -25,7 +25,7 @@ class CartScreen extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthCubit>(
-          create: (context) => AuthCubit(),
+          create: (context) => getIt<AuthCubit>(),
         ),
         BlocProvider<CartCubit>(
           create: (context) => CartCubit(),

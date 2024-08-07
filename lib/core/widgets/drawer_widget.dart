@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_slice/business_logic_layer/authentication_cubit/auth_cubit.dart';
-
-import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/colors.dart';
-import '../constants/dimensions.dart';
-import '../constants/styles.dart';
 import '../routing/routes.dart';
+import 'drawer_header.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -19,38 +16,7 @@ class MyDrawer extends StatelessWidget {
         Container(
           height: 300.h,
           decoration: const BoxDecoration(color: MyColors.navyBlue),
-          child: DrawerHeader(
-              child: FutureBuilder<SharedPreferences>(
-            future: SharedPreferences.getInstance(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                String userName = snapshot.data!.getString('name') ?? '';
-                String userEmail = snapshot.data!.getString('email') ?? '';
-                String userProfilePicture =
-                    snapshot.data!.getString('profile_picture') ?? '';
-
-                return Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CircleAvatar(
-                      radius: 80.r,
-                      backgroundColor: Colors.transparent,
-                      backgroundImage: NetworkImage(userProfilePicture),
-                    ),
-                    AppDimensions.verticalSpacing15,
-                    Text(
-                      userName,
-                      style: MyTextStyles.font20WhiteBold,
-                    ),
-                    AppDimensions.verticalSpacing15,
-                    Text(userEmail, style: MyTextStyles.font14WhiteBold),
-                  ],
-                );
-              } else {
-                return const SizedBox();
-              }
-            },
-          )),
+          child: const DrawerHeaderWidget(),
         ),
         const SizedBox(
           height: 10,
